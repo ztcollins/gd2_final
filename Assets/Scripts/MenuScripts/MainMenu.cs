@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour, IDataPersistence
     public void Awake()
     {
         Debug.Log("entering awake.");
-        GameObject.Find("SceneManager").GetComponent<DataPersistenceManager>().BeginLoading();
+        GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().BeginLoading();
         Debug.Log("Money = " + money);
         Debug.Log("Day = " + day);
     }
@@ -38,17 +38,17 @@ public class MainMenu : MonoBehaviour, IDataPersistence
 
     public void SetDay(int value)
     {
-        dayText.text = value.ToString();
+        //dayText.text = value.ToString();
     }
 
     public void SetMoney(float value)
     {
-        moneyText.text = value.ToString("F2");
+        //moneyText.text = value.ToString("F2");
     }
 
     public void StartNewDay()
     {
-        SceneManager.LoadScene("lobbyScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("LobbyScene", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("MainMenu");
     }
 }
