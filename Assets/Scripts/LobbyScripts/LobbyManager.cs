@@ -22,7 +22,7 @@ public class LobbyManager : MonoBehaviour, IDataPersistence
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("SceneManager").GetComponent<DataPersistenceManager>().BeginLoading();
+        GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().BeginLoading();
         isDayFinished = false;
         ordersObject = GameObject.Find("OrdersList");
         customerList = new List<Customer>();
