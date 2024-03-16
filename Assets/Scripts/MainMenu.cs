@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartNewDay()
     {
-        SceneManager.LoadScene("lobbyScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("LobbyScene", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("MainMenu");
     }
 }
