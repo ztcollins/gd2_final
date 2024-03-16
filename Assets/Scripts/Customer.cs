@@ -15,7 +15,7 @@ public class Customer : MonoBehaviour
     public Order StartOrder(GameObject order) {
         hasBeenClicked = true;
         associatedOrderObject = order;
-        Order newOrder = new Order();
+        Order newOrder = order.GetComponent<Order>();
         newOrder.Initialize(this, order);
         customersOrder = newOrder;
         return customersOrder;
@@ -28,6 +28,10 @@ public class Customer : MonoBehaviour
 
     public bool HasBeenClicked() {
         return hasBeenClicked;
+    }
+
+    public GameObject GetGameObject() {
+        return customerObject;
     }
 
 }

@@ -13,6 +13,8 @@ public class Order : MonoBehaviour
     private String color;
     private String size;
     private String type;
+    private float orderValue;
+    
     public void Initialize(Customer customer, GameObject order) {
         associatedCustomer = customer;
         orderObject = order;
@@ -27,12 +29,13 @@ public class Order : MonoBehaviour
         color = colors[colorChoice];
         size = sizes[sizeChoice];
         type = types[typeChoice];
+
+        orderValue = Random.Range(1.00f, 3.00f);
     }
 
     public void visualizeOrder() {
         TMP_Text[] textArray = orderObject.GetComponentsInChildren<TMP_Text>();
         foreach(var text in textArray) {
-            Debug.Log(text.name);
             if(text.name == "OrderType") {
                 text.text = type;
             }
@@ -43,7 +46,14 @@ public class Order : MonoBehaviour
                 text.text = size;
             }
         }
-        Debug.Log("Visualize me!");
+    }
+
+    public GameObject GetGameObject() {
+        return orderObject;
+    }
+
+    public Customer GetAssociatedCustomer() {
+        return associatedCustomer;
     }
 
     public String GetOrderColor() {
@@ -56,5 +66,9 @@ public class Order : MonoBehaviour
 
     public String GetOrderType() {
         return type;
+    }
+
+    public float GetOrderValue() {
+        return orderValue;
     }
 }
