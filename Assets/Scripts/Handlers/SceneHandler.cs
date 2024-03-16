@@ -10,10 +10,11 @@ public class SceneHandler : MonoBehaviour
     // We do it this way to we can keep persistent objects (handlers) between scenes and the button can still call correct
     // function on runtime without reference on compile time
     public string currentScene;
+    public string startScene;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        ChangeScene("MainMenu");
+        ChangeScene(startScene);
     }
    
     public void ChangeScene(string sceneName)
