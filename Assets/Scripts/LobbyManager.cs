@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour, IDataPersistence
@@ -97,6 +98,9 @@ public class LobbyManager : MonoBehaviour, IDataPersistence
     public void FinishDay()
     {
         this.day++;
+        GameObject.Find("SceneManager").GetComponent<DataPersistenceManager>().SaveGame();
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("lobbyScene");
     }
 
     public void SetMoney(float value)
