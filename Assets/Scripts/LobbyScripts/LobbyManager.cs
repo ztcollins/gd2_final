@@ -71,7 +71,11 @@ public class LobbyManager : MonoBehaviour, IDataPersistence
     public void HandleOrderClick(GameObject clickedOrder)
     {
         Order order = clickedOrder.GetComponent<Order>();
+
         //start order minigame here
+        //GameObject.Find("SceneManager").GetComponent<CandleOrderManager>().InitializeCandleMinigame(order);
+        //SceneManager.LoadScene("CandleScene", LoadSceneMode.Additive);
+        //SceneManager.UnloadSceneAsync("lobbyScene");
 
         //complete order
         FinishOrder(order);
