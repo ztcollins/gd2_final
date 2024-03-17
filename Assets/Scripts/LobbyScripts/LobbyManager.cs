@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class LobbyManager : MonoBehaviour
 {
@@ -17,23 +15,84 @@ public class LobbyManager : MonoBehaviour
     private List<Order> orderList;
     private float money;
     private int day;
-    private Boolean isDayFinished;
+    private bool isDayFinished;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //setup the scene
-        this.money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money;
+    void Awake() {
+
+        // load in lobby handler data
+        List<Customer> loadedCustomers = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetCustomers();
+        List<Order> loadedOrders = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetOrders();
+        float loadedMoney = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetCurrentMoney();
+
+        // reload lobby data
+        ordersObject = GameObject.Find("OrdersList");
+        isDayFinished = false;
+
+        // money
+        if(loadedMoney != 0)
+        {
+            money = loadedMoney;
+        }
+        else
+        {
+            money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money;
+        }
+
+        // customers
+        if(loadedCustomers != null)
+        {
+            customerList = loadedCustomers;
+            foreach(var customer in customerList)
+            {
+                GameObject customerObj = customer.GetGameObject();
+                customerObj.SetActive(true);
+            }
+        }
+        else
+        {
+            customerList = new List<Customer>();
+            CreateNewCustomers();
+        }
+
+        // orders
+        if(loadedOrders != null)
+        {
+            orderList = new List<Order>();
+            foreach(var order in loadedOrders)
+            {
+                GameObject newOrderObj = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
+                Order newOrder = newOrderObj.GetComponent<Order>();
+                newOrder.SetNewOrder(order, newOrderObj);
+                newOrder.visualizeOrder();
+                newOrder.transform.SetParent(ordersObject.transform);
+
+                if(newOrder.IsCurrentOrder())
+                {
+                    GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(newOrder);
+                }
+                
+                orderList.Add(newOrder);
+            }
+        }
+        else
+        {
+            orderList = new List<Order>();
+        }
+
+        // reload stats
         this.day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day;
         SetMoney(this.money);
         SetDay(this.day);
-        isDayFinished = false;
-        ordersObject = GameObject.Find("OrdersList");
-        customerList = new List<Customer>();
-        orderList = new List<Order>();
 
-        //load in customers
-        Tester();
+        // order complete animation?
+
+        // complete order
+        Order currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
+        bool isCurrentOrderComplete = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().IsOrderComplete();
+        if(isCurrentOrderComplete)
+        {
+            FinishOrder(currentOrder);
+        }
     }
 
     void Update()
@@ -46,11 +105,21 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    public Customer AddCustomer(Vector2 position) {
-        
+    public void SaveIntermediate()
+    {
+        GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(customerList, orderList, money);
+        foreach(var customer in customerList)
+        {
+            GameObject customerObj = customer.GetGameObject();
+            DontDestroyOnLoad(customerObj);
+            customerObj.SetActive(false);
+        };
+    }
+
+    public Customer AddNewCustomer(Vector2 position) {
         GameObject instantiatedCustomer = Instantiate(customerPrefab, position, Quaternion.identity);    
         Customer newCustomer = instantiatedCustomer.GetComponent<Customer>();
-        newCustomer.Initialize(instantiatedCustomer);
+        newCustomer.Initialize(instantiatedCustomer, position);
         customerList.Add(newCustomer);
         return newCustomer;
     }
@@ -78,31 +147,36 @@ public class LobbyManager : MonoBehaviour
     {
         Order order = clickedOrder.GetComponent<Order>();
 
-        //start order minigame here
-        //GameObject.Find("SceneManager").GetComponent<CandleOrderManager>().InitializeCandleMinigame(order);
-        //SceneManager.LoadScene("CandleScene", LoadSceneMode.Additive);
-        //SceneManager.UnloadSceneAsync("lobbyScene");
+        // save the current state before leaving
+        SaveIntermediate();
 
-        //complete order
-        FinishOrder(order);
+        // start order minigame here
+        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().InitializeCandleMinigame(order);
+        GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "CandleScene");
+
+        // complete order by coming back to AWAKE() with bool isOrderComplete = true
     }
 
     public void FinishOrder(Order orderToFinish)
     {
-        //remove from lists
+        // remove from lists
         GameObject orderObject = orderToFinish.GetGameObject();
         Customer associatedCustomer = orderToFinish.GetAssociatedCustomer();
         GameObject associatedCustomerObject = associatedCustomer.GetGameObject();
         customerList.Remove(associatedCustomer);
         orderList.Remove(orderToFinish);
 
-        //give player money
+        // give player money
         money += orderToFinish.GetOrderValue();
         SetMoney(money);
 
-        //remove the customer & order
+        // remove the customer & order
         Destroy(associatedCustomerObject);
         Destroy(orderObject);
+
+        // reset current order
+        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(null);
+        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(false);
     }
 
     public void FinishDay()
@@ -110,6 +184,7 @@ public class LobbyManager : MonoBehaviour
         this.day++;
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day = this.day;
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money = this.money;
+        GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(null, null, 0);
         GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().SaveGame();
         GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "MainMenu");
     }
@@ -125,9 +200,10 @@ public class LobbyManager : MonoBehaviour
     }
 
     // test code here
-    void Tester() {
-        AddCustomer(new Vector2(0,0));
-        AddCustomer(new Vector2(0,2));
+    void CreateNewCustomers() {
+        Debug.Log("Creating new customers");
+        AddNewCustomer(new Vector2(0,0));
+        AddNewCustomer(new Vector2(0,2));
     }
 
 }

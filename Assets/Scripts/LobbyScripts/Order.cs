@@ -14,10 +14,13 @@ public class Order : MonoBehaviour
     private String size;
     private String type;
     private float orderValue;
+    private bool isCurrentOrder;
     
-    public void Initialize(Customer customer, GameObject order) {
+    public void Initialize(Customer customer, GameObject order)
+    {
         associatedCustomer = customer;
         orderObject = order;
+        isCurrentOrder = false;
 
         String[] colors = {"red", "green", "blue"};
         String[] sizes = {"small", "medium", "large"};
@@ -36,39 +39,69 @@ public class Order : MonoBehaviour
     public void visualizeOrder() {
         TMP_Text[] textArray = orderObject.GetComponentsInChildren<TMP_Text>();
         foreach(var text in textArray) {
-            if(text.name == "OrderType") {
+            if(text.name == "OrderType")
+            {
                 text.text = type;
             }
-            else if(text.name == "OrderColor") {
+            else if(text.name == "OrderColor")
+            {
                 text.text = color;
             }
-            else if(text.name == "OrderSize") {
+            else if(text.name == "OrderSize")
+            {
                 text.text = size;
             }
         }
     }
 
-    public GameObject GetGameObject() {
+    public void SetNewOrder(Order orderToCopy, GameObject newOrderObj)
+    {
+        this.associatedCustomer = orderToCopy.associatedCustomer;
+        this.orderObject = newOrderObj;
+        this.color = orderToCopy.color;
+        this.type = orderToCopy.type;
+        this.size = orderToCopy.size;
+        this.orderValue = orderToCopy.orderValue;
+        this.isCurrentOrder = orderToCopy.isCurrentOrder;
+    }
+
+    public GameObject GetGameObject()
+    {
         return orderObject;
     }
 
-    public Customer GetAssociatedCustomer() {
+    public Customer GetAssociatedCustomer()
+    {
         return associatedCustomer;
     }
 
-    public String GetOrderColor() {
+    public String GetOrderColor()
+    {
         return color;
     }
 
-    public String GetOrderSize() {
+    public String GetOrderSize()
+    {
         return size;
     }
 
-    public String GetOrderType() {
+    public String GetOrderType()
+    {
         return type;
     }
 
-    public float GetOrderValue() {
+    public float GetOrderValue()
+    {
         return orderValue;
+    }
+
+    public bool IsCurrentOrder()
+    {
+        return isCurrentOrder;
+    }
+
+    public void SetCurrentOrder()
+    {
+        isCurrentOrder = true;
     }
 }

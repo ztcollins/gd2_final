@@ -70,7 +70,6 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("begin loading");
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();

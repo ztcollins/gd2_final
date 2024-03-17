@@ -6,6 +6,7 @@ public class Customer : MonoBehaviour
     private GameObject associatedOrderObject;
     private bool hasBeenClicked;
     private Order customersOrder;
+    private Vector2 position;
 
     public void Awake() {
         Debug.Log("customer awakens");
@@ -21,9 +22,10 @@ public class Customer : MonoBehaviour
         return customersOrder;
     }
 
-    public void Initialize(GameObject newCustomer) {
+    public void Initialize(GameObject newCustomer, Vector2 position) {
         hasBeenClicked = false;
         customerObject = newCustomer;
+        this.position = position;
     }
 
     public bool HasBeenClicked() {
@@ -32,6 +34,11 @@ public class Customer : MonoBehaviour
 
     public GameObject GetGameObject() {
         return customerObject;
+    }
+
+    public Vector2 GetPosition()
+    {
+        return position;
     }
 
 }

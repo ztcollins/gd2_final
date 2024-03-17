@@ -7,6 +7,8 @@ TagManager:
   - SceneHandler
   - DataHandler
   - StatsHandler
+  - OrderHandler
+  - LobbyHandler
   layers:
   - Default
   - TransparentFX

@@ -10,13 +10,8 @@ public class CandleGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentOrder = GameObject.Find("SceneManager").GetComponent<CandleOrderManager>().GetCurrentOrder();
+        currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
         Debug.Log(currentOrder.GetOrderColor());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

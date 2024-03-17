@@ -35,6 +35,10 @@ public class SceneHandler : MonoBehaviour
                 GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().CreateNewSave();
                 ChangeScene("MainMenu"); //change to intro animation or something eventually?
                 break;
+            case(SceneHandlerInstruction.FINISHORDER):
+                GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(true);
+                GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "LobbyScene");
+                break;
             default:
                 Debug.Log("Instruction invalid or unspecified or something");
                 return;

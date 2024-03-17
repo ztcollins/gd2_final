@@ -4,5 +4,6 @@ public enum SceneHandlerInstruction
     CHANGESCENE = 0,
     CONTINUE = 1,
     NEWGAME = 2,
+    FINISHORDER = 3,
     
 }
