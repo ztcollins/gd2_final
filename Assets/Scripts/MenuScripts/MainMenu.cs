@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour, IDataPersistence
+public class MainMenu : MonoBehaviour
 {
 
     public TextMeshProUGUI moneyText;
@@ -14,37 +14,20 @@ public class MainMenu : MonoBehaviour, IDataPersistence
 
     public void Awake()
     {
-        Debug.Log("entering awake.");
-        GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().BeginLoading();
-        Debug.Log("Money = " + money);
-        Debug.Log("Day = " + day);
-    }
-
-    public void LoadData(GameData data)
-    {
-        Debug.Log("Loading main menu data");
-        this.money = data.money;
-        this.day = data.day;
+        this.money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money;
+        this.day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day;
         SetMoney(this.money);
         SetDay(this.day);
     }
 
-    public void SaveData(ref GameData data)
-    {
-        Debug.Log("Saving main menu data");
-        data.money = this.money;
-        data.day = this.day;
-    }
-
     public void SetDay(int value)
     {
-        
-        //dayText.text = value.ToString();
+        dayText.text = value.ToString();
     }
 
     public void SetMoney(float value)
     {
-        //moneyText.text = value.ToString("F2");
+        moneyText.text = value.ToString("F2");
     }
 
     public void StartNewDay()

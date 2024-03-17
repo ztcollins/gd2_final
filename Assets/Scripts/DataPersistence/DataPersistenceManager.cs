@@ -30,6 +30,10 @@ public class DataPersistenceManager : MonoBehaviour
         this.gameData = new GameData();
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         dataHandler.Save(gameData);
+
+        // update stats handler to match new save data
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money = gameData.money;
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day = gameData.day;
     }
 
     public void NewGame()
@@ -64,7 +68,7 @@ public class DataPersistenceManager : MonoBehaviour
         dataHandler.Save(gameData);
     }
 
-    public void BeginLoading()
+    public void Start()
     {
         Debug.Log("begin loading");
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
@@ -74,7 +78,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        //SaveGame();
+        SaveGame();
     }
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()

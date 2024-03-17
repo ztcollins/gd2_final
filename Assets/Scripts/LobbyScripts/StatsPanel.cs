@@ -12,7 +12,7 @@ public class StatsPanel : MonoBehaviour
 
     void LoadStats()
     {
-        GameObject.FindWithTag("DataManager").GetComponent<DataPersistenceManager>().BeginLoading();
+        //GameObject.FindWithTag("DataManager").GetComponent<DataPersistenceManager>().BeginLoading();
     }
 
     public void LoadData(GameData data)

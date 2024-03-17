@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LobbyManager : MonoBehaviour, IDataPersistence
+public class LobbyManager : MonoBehaviour
 {
 
     public GameObject customerPrefab;
@@ -22,11 +22,17 @@ public class LobbyManager : MonoBehaviour, IDataPersistence
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().BeginLoading();
+        //setup the scene
+        this.money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money;
+        this.day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day;
+        SetMoney(this.money);
+        SetDay(this.day);
         isDayFinished = false;
         ordersObject = GameObject.Find("OrdersList");
         customerList = new List<Customer>();
         orderList = new List<Order>();
+
+        //load in customers
         Tester();
     }
 
@@ -102,9 +108,10 @@ public class LobbyManager : MonoBehaviour, IDataPersistence
     public void FinishDay()
     {
         this.day++;
-        GameObject.Find("SceneManager").GetComponent<DataPersistenceManager>().SaveGame();
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync("lobbyScene");
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day = this.day;
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money = this.money;
+        GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().SaveGame();
+        GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "MainMenu");
     }
 
     public void SetMoney(float value)
@@ -123,19 +130,4 @@ public class LobbyManager : MonoBehaviour, IDataPersistence
         AddCustomer(new Vector2(0,2));
     }
 
-    public void LoadData(GameData data)
-    {
-        Debug.Log("Loading Lobby data");
-        this.money = data.money;
-        this.day = data.day;
-        SetMoney(this.money);
-        SetDay(this.day);
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        Debug.Log("Saving Lobby data");
-        data.money = this.money;
-        data.day = this.day;
-    }
 }
