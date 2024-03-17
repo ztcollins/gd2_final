@@ -257,7 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9385e2bed6401849b1c4c787d988f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: LobbyScene
+  instruction: 0
+  instructionText: LobbyScene
 --- !u!1 &958594421
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efba208512b1514f8c10d2f91ca8170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyText: {fileID: 0}
+  dayText: {fileID: 0}
 --- !u!1 &2001089618
 GameObject:
   m_ObjectHideFlags: 0

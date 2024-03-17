@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class CustomButton : MonoBehaviour
 {
     private SceneHandler sceneHandler;
-    public string sceneToLoad;
+    public SceneHandlerInstruction instruction;
+    public string instructionText;
     void Awake()
     {
         sceneHandler = GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>();
@@ -15,6 +16,6 @@ public class CustomButton : MonoBehaviour
 
     void AttachOnClick()
     {
-        this.gameObject.GetComponent<Button>().onClick.AddListener(delegate {sceneHandler.ChangeScene(sceneToLoad);});
+        this.gameObject.GetComponent<Button>().onClick.AddListener(delegate {sceneHandler.UseInstruction(instruction, instructionText);});
     }
 }

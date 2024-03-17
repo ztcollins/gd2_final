@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CandleScene.unity
     guid: ff84eaaefc9cb6d4390b6cd7c1e80a74
   - enabled: 1
-    path: Assets/Scenes/LobbyScene.unity
+    path: Assets/Scenes/lobbyScene.unity
     guid: 72eeebdaa995da7428c4ee8b70e62a67
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 96940f87038ca30439c473e3ec651d9f
   m_configObjects: {}

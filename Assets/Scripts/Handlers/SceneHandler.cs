@@ -17,14 +17,44 @@ public class SceneHandler : MonoBehaviour
         ChangeScene(startScene);
     }
    
-    public void ChangeScene(string sceneName)
+    public void UseInstruction(SceneHandlerInstruction instruction, string instructionText)
     {
+        switch(instruction)
+        {
+            case(SceneHandlerInstruction.EXIT):
+                //savedata?
+                Exit();
+                break;
+            case(SceneHandlerInstruction.CHANGESCENE):
+                ChangeScene(instructionText);
+                break;
+            case(SceneHandlerInstruction.CONTINUE):
+                ChangeScene("MainMenu");
+                break;
+            case(SceneHandlerInstruction.NEWGAME):
+                GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().CreateNewSave();
+                ChangeScene("MainMenu"); //change to intro animation or something eventually?
+                break;
+            default:
+                Debug.Log("Instruction invalid or unspecified or something");
+                return;
+        }
+    }
+
+    void ChangeScene(string sceneName)
+    {
+        if(sceneName == null) 
+        {
+            Debug.Log("sceneName is null!");
+            return;
+        }
+        
         SceneManager.LoadScene(sceneName);
         currentScene = sceneName;
     }
 
-    public void ChangeScene(string sceneName, int transitionDuration)
+    public void Exit()
     {
-        Debug.Log("TODO");
+        Application.Quit();
     }
 }

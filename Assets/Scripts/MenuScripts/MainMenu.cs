@@ -38,6 +38,7 @@ public class MainMenu : MonoBehaviour, IDataPersistence
 
     public void SetDay(int value)
     {
+        
         //dayText.text = value.ToString();
     }
 
