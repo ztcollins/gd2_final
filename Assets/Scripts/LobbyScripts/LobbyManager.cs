@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LobbyManager : MonoBehaviour
@@ -200,10 +201,24 @@ public class LobbyManager : MonoBehaviour
     }
 
     // test code here
-    void CreateNewCustomers() {
+    void CreateNewCustomers()
+    {
         Debug.Log("Creating new customers");
         AddNewCustomer(new Vector2(0,0));
         AddNewCustomer(new Vector2(0,2));
+    }
+
+    public void Back()
+    {
+        Debug.Log("customers can be destroyed!");
+        foreach(var customer in customerList)
+        {
+            GameObject customerObj = customer.GetGameObject();
+            SceneManager.MoveGameObjectToScene(customerObj, SceneManager.GetActiveScene());
+        }
+        GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(null, null, 0);
+        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(null);
+        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(false);
     }
 
 }

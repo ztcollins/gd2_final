@@ -104,4 +104,9 @@ public class Order : MonoBehaviour
     {
         isCurrentOrder = true;
     }
+
+    public void SetNewOrderObject(GameObject newOrderObject)
+    {
+        orderObject = newOrderObject;
+    }
 }

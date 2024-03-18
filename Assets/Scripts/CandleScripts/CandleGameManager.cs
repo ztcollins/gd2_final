@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CandleGameManager : MonoBehaviour
 {
+    public GameObject prefabOrder;
+    public GameObject ordersObject;
 
     private Order currentOrder;
 
@@ -12,6 +14,10 @@ public class CandleGameManager : MonoBehaviour
     {
         currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
         Debug.Log(currentOrder.GetOrderColor());
+        GameObject newOrder = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
+        currentOrder.SetNewOrderObject(newOrder);
+        currentOrder.visualizeOrder();
+        newOrder.transform.SetParent(ordersObject.transform);
     }
 
 }
