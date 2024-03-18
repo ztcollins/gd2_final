@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class CandleSlot : MonoBehaviour, IDropHandler
+public class CandleSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private bool hasCandle;
 
@@ -26,5 +27,19 @@ public class CandleSlot : MonoBehaviour, IDropHandler
     public bool HasCandle()
     {
         return hasCandle;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(eventData.pointerDrag != null)
+        {
+            GetComponent<Image>().color = Color.white;
+        }
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        GetComponent<Image>().color = Color.clear;
     }
 }

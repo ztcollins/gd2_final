@@ -128,6 +128,7 @@ public class LobbyManager : MonoBehaviour
     public void HandleCustomerClick(GameObject clickedCustomer)
     {
         Customer customer = clickedCustomer.GetComponent<Customer>();
+        clickedCustomer.GetComponent<SpriteRenderer>().color = Color.red;
 
         if(customer.HasBeenClicked()) {
             // do nothing
@@ -204,8 +205,13 @@ public class LobbyManager : MonoBehaviour
     void CreateNewCustomers()
     {
         Debug.Log("Creating new customers");
-        AddNewCustomer(new Vector2(0,0));
-        AddNewCustomer(new Vector2(0,2));
+        int customerNumber = Random.Range(2,6);
+        for(int i = 0; i < customerNumber; i++)
+        {
+            AddNewCustomer(new Vector2(i*2-6,0));
+        }
+        //AddNewCustomer(new Vector2(0,0));
+        //AddNewCustomer(new Vector2(0,2));
     }
 
     public void Back()
