@@ -9,6 +9,7 @@ TagManager:
   - StatsHandler
   - OrderHandler
   - LobbyHandler
+  - CandleGenerator
   layers:
   - Default
   - TransparentFX
