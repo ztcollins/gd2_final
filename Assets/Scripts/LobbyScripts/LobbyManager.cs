@@ -140,7 +140,7 @@ public class LobbyManager : MonoBehaviour
             Order newOrder = customer.StartOrder(order);
             orderList.Add(newOrder);
             newOrder.visualizeOrder();
-            order.transform.SetParent(ordersObject.transform);
+            order.transform.SetParent(GameObject.Find("OrdersList").transform);
         }
  
     }
