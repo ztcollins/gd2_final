@@ -29,6 +29,11 @@ public class CandleSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         return hasCandle;
     }
 
+    public void SetNoCandle()
+    {
+        hasCandle = false;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
