@@ -11,6 +11,7 @@ public class LobbyManager : MonoBehaviour
     public GameObject prefabOrder;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
+    public GameObject resultsPanel;
     private GameObject ordersObject;
     private List<Customer> customerList;
     private List<Order> orderList;
@@ -167,10 +168,14 @@ public class LobbyManager : MonoBehaviour
         GameObject associatedCustomerObject = associatedCustomer.GetGameObject();
         customerList.Remove(associatedCustomer);
         orderList.Remove(orderToFinish);
+        
+        if(SummoningResults(orderToFinish))
+        {
+            // give player money
+            money += orderToFinish.GetOrderValue();
+            SetMoney(money);
+        }
 
-        // give player money
-        money += orderToFinish.GetOrderValue();
-        SetMoney(money);
 
         // remove the customer & order
         Destroy(associatedCustomerObject);
@@ -179,6 +184,81 @@ public class LobbyManager : MonoBehaviour
         // reset current order
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(null);
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(false);
+    }
+
+    public bool SummoningResults(Order currentOrder)
+    {
+        string currentDemonSize = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentDemonSize();
+        string currentDemonColor = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentDemonColor();
+        string currentDemonType = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentDemonType();
+
+        Debug.Log(currentDemonSize);
+        Debug.Log(currentDemonColor);
+        Debug.Log(currentDemonType);
+
+        string results = "FAILURE";
+        bool isCorrect = false;
+        if(currentDemonSize == currentOrder.GetOrderSize() && currentDemonColor == currentOrder.GetOrderColor() && currentDemonType == currentOrder.GetOrderType())
+        {
+            isCorrect = true;
+            results = "SUCCESS";
+        }
+
+        TextMeshProUGUI[] textToChange = resultsPanel.GetComponentsInChildren<TextMeshProUGUI>();
+
+        foreach(var text in textToChange)
+        {
+            switch(text.tag)
+            {
+                case "MoneyEarned" :
+                    if(isCorrect)
+                    {
+                        text.text = currentOrder.GetOrderValue().ToString("F2");
+                    }
+                    
+                    break;
+                case "ResultsTitle" :
+                    text.text = results;
+                    if(!isCorrect)
+                    {
+                        text.color = Color.red;
+                    }
+                    break;
+                case "RequestSize" :
+                    text.text = currentOrder.GetOrderSize();
+                    break;
+                case "RequestColor" :
+                    text.text = currentOrder.GetOrderColor();
+                    break;
+                case "RequestType" :
+                    text.text = currentOrder.GetOrderType();
+                    break;
+                case "SummonedSize" :
+                    text.text = currentDemonSize;
+                    break;
+                case "SummonedColor" :
+                    text.text = currentDemonColor;
+                    break;
+                case "SummonedType" :
+                    text.text = currentDemonType;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        resultsPanel.SetActive(true);
+
+        if(isCorrect)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void CloseResults()
+    {
+        resultsPanel.SetActive(false);
     }
 
     public void FinishDay()
