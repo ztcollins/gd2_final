@@ -24,7 +24,7 @@ public class Order : MonoBehaviour
 
         String[] colors = {"red", "green", "blue"};
         String[] sizes = {"small", "medium", "large"};
-        String[] types = {"human", "worm", "imp"};
+        String[] types = {"humanoid", "worm", "imp"};
 
         int colorChoice = Random.Range(0,2);
         int sizeChoice = Random.Range(0,2);

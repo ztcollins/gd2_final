@@ -11,6 +11,14 @@ TagManager:
   - LobbyHandler
   - CandleGenerator
   - CandleHolder
+  - MoneyEarned
+  - ResultsTitle
+  - RequestSize
+  - RequestColor
+  - RequestType
+  - SummonedSize
+  - SummonedColor
+  - SummonedType
   layers:
   - Default
   - TransparentFX
