@@ -3,27 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - SceneHandler
-  - DataHandler
-  - StatsHandler
-  - OrderHandler
-  - LobbyHandler
-  - CandleGenerator
-<<<<<<< HEAD
-  - CandleHolder
-  - MoneyEarned
-  - ResultsTitle
-  - RequestSize
-  - RequestColor
-  - RequestType
-  - SummonedSize
-  - SummonedColor
-  - SummonedType
-=======
-  - BookHandler
-  - UIHandler
->>>>>>> book
+  tags: []
   layers:
   - Default
   - TransparentFX

@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 293122267}
   - component: {fileID: 293122266}
   m_Layer: 6
-  m_Name: SizeBookmarkL
+  m_Name: ColorBookmarkL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b5c98936fd12de04dabac98570abcbeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce5330fc0bba8a04896d52d66056e736, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1281,11 +1281,11 @@ MonoBehaviour:
   nextPage: {fileID: 1355054285}
   previousPage: {fileID: 4675863}
   typeBookmarkR: {fileID: 1065284903}
-  sizeBookmarkR: {fileID: 1890908387}
-  colorBookmarkR: {fileID: 995174894}
+  sizeBookmarkR: {fileID: 995174894}
+  colorBookmarkR: {fileID: 1890908387}
   typeBookmarkL: {fileID: 2069883893}
-  sizeBookmarkL: {fileID: 293122264}
-  colorBookmarkL: {fileID: 1225273206}
+  sizeBookmarkL: {fileID: 1225273206}
+  colorBookmarkL: {fileID: 293122264}
   summonBookButtonImage: {fileID: 229565804}
   summonBookUp: {fileID: 21300000, guid: ab69d28d194d02f47999c084aa82f5b1, type: 3}
   summonBookDown: {fileID: 21300000, guid: 930ad3cdbdd0fda408a262e94302b7d5, type: 3}
@@ -1458,7 +1458,7 @@ GameObject:
   - component: {fileID: 995174897}
   - component: {fileID: 995174896}
   m_Layer: 6
-  m_Name: ColorBookmarkR
+  m_Name: SizeBookmarkR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce5330fc0bba8a04896d52d66056e736, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5c98936fd12de04dabac98570abcbeb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 1225273209}
   - component: {fileID: 1225273208}
   m_Layer: 6
-  m_Name: ColorBookmarkL
+  m_Name: SizeBookmarkL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,7 +1823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce5330fc0bba8a04896d52d66056e736, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5c98936fd12de04dabac98570abcbeb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2318,7 +2318,7 @@ GameObject:
   - component: {fileID: 1890908390}
   - component: {fileID: 1890908389}
   m_Layer: 6
-  m_Name: SizeBookmarkR
+  m_Name: ColorBookmarkR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b5c98936fd12de04dabac98570abcbeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce5330fc0bba8a04896d52d66056e736, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

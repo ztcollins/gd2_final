@@ -13,8 +13,8 @@ public class BookHandler : MonoBehaviour
 
     //constants for the demo
     int TYPEPAGENO = 0;
-    int SIZEPAGENO = 4;
-    int COLORPAGENO = 8;
+        int COLORPAGENO = 4;
+    int SIZEPAGENO = 8;
 
     #region References
         [SerializeField] private Animator bookAnimator;
