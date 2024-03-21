@@ -10,6 +10,8 @@ TagManager:
   - OrderHandler
   - LobbyHandler
   - CandleGenerator
+  - BookHandler
+  - UIHandler
   layers:
   - Default
   - TransparentFX

@@ -1,66 +1,158 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityEngine.UI;
 
 public class BookHandler : MonoBehaviour
 {
-    int MAX_PAGE_NO = 10; //arbitrary, depends on data of user and pages unlocked
-    public int pageNo = 0;
-
+    public int pageNo = 0; //relatively unimportant for actual logic. pageArrayIndex is more important
+    public List<int> pageArray;
+    public int pageArrayIndex = 0;
     bool isActive = false;
 
-    public GameObject book;
+    //constants for the demo
+    int TYPEPAGENO = 0;
+    int SIZEPAGENO = 4;
+    int COLORPAGENO = 8;
+
+    #region References
+        [SerializeField] private Animator bookAnimator;
+        [SerializeField] private Image pageImage;
+        [SerializeField] private GameObject bookCanvas;
+        [SerializeField] private GameObject rightPage;
+        [SerializeField] private GameObject tornPage;
+        [SerializeField] private GameObject nextPage;
+        [SerializeField] private GameObject previousPage;
+        [SerializeField] private GameObject typeBookmarkR;
+        [SerializeField] private GameObject sizeBookmarkR;
+        [SerializeField] private GameObject colorBookmarkR;
+        [SerializeField] private GameObject typeBookmarkL;
+        [SerializeField] private GameObject sizeBookmarkL;
+        [SerializeField] private GameObject colorBookmarkL;
+        [SerializeField] private Image summonBookButtonImage;     
+        [SerializeField] private Sprite summonBookUp;
+        [SerializeField] private Sprite summonBookDown;
+    #endregion
 
     void Awake()
     {
-        SetPage(pageNo);
+        LoadPageArray();
+        SetPage(pageArray[0]);
+        bookAnimator.SetBool("summon", false);
+        isActive = false;
     }
 
-    void Update()
+    void LoadPageArray()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        pageArray = new List<int>();
+        for(int i = 0; i < 13; i++)
         {
-            isActive = !isActive;
-            book.SetActive(isActive);
-            //to be improved with animations
+            pageArray.Add(i);
         }
+        pageArray.Add(999);
+        pageArray.Sort();
     }
 
-    public void SetPage(int pageNo)
+    public void SetPage(int pageIndex)
     {
-        Debug.Log(pageNo);
-        if(pageNo >= MAX_PAGE_NO) //greater than max
+        pageArrayIndex = pageIndex;
+        if(pageArrayIndex == pageArray.Count - 1) //greater than max
         {
-            book.transform.GetChild(1).gameObject.SetActive(false);
-            book.transform.GetChild(3).gameObject.SetActive(true);
-            book.transform.GetChild(5).gameObject.SetActive(false);
-            this.pageNo = MAX_PAGE_NO;
+            SetBookState(BookState.MAX);
+            SetPageImage(999);
+            pageNo = 999;
         }
-        else if(pageNo <= 0) //less than min
+        else if(pageArrayIndex <= 0) //less than min
         {
-            book.transform.GetChild(3).gameObject.SetActive(false);
-            book.transform.GetChild(6).gameObject.SetActive(false);
-            this.pageNo = 0;
+            SetBookState(BookState.MIN);
+            SetPageImage(0);
+            pageNo = 0;
         }
         else
         {
-            book.transform.GetChild(1).gameObject.SetActive(true);
-            book.transform.GetChild(3).gameObject.SetActive(false);
-            book.transform.GetChild(5).gameObject.SetActive(true);
-            book.transform.GetChild(6).gameObject.SetActive(true);
-            this.pageNo = pageNo;
+            SetBookState(BookState.DEFAULT);
+            SetPageImage(pageArray[pageArrayIndex]);
+            pageNo = pageArray[pageArrayIndex];
         }
+        SetBookmarks(pageNo);
+    }
+
+    private void SetBookState(BookState bookState)
+    {
+        switch(bookState)
+        {
+            case(BookState.MIN):
+                rightPage.SetActive(true);
+                tornPage.SetActive(false);
+                nextPage.SetActive(true);
+                previousPage.SetActive(false);
+                break;
+            case(BookState.DEFAULT):
+                rightPage.SetActive(true);
+                tornPage.SetActive(false);
+                nextPage.SetActive(true);
+                previousPage.SetActive(true);
+                break;
+            case(BookState.MAX):
+                rightPage.SetActive(false);
+                tornPage.SetActive(true);
+                nextPage.SetActive(false);
+                previousPage.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void SetBookmarks(int pageNo)
+    {
+        typeBookmarkL.SetActive(pageNo > TYPEPAGENO);
+        typeBookmarkR.SetActive(!(pageNo > TYPEPAGENO));
+
+        sizeBookmarkL.SetActive(pageNo > SIZEPAGENO);
+        sizeBookmarkR.SetActive(!(pageNo > SIZEPAGENO));
+
+        colorBookmarkL.SetActive(pageNo > COLORPAGENO);
+        colorBookmarkR.SetActive(!(pageNo > COLORPAGENO));
     }
 
     public void NextPage()
     {
-        SetPage(++pageNo);
-        Debug.Log("next page");
+        if(++pageArrayIndex >= pageArray.Count) pageArrayIndex = pageArray.Count - 1;
+
+        SetPage(pageArrayIndex);
     }
 
     public void PrevPage()
     {
-        SetPage(--pageNo);
-        Debug.Log("prev page");
+        if(--pageArrayIndex <= 0) pageArrayIndex = 0;
+
+        SetPage(pageArrayIndex);
+    }
+
+    public void SummonBook()
+    {
+        if(isActive)
+        {
+            bookAnimator.SetBool("summon", false);
+            summonBookButtonImage.sprite = summonBookUp;
+        }
+        else
+        {
+            bookAnimator.SetBool("summon", true);
+            summonBookButtonImage.sprite = summonBookDown;
+        }
+        isActive = !isActive;
+    }
+
+    public void SetPageImage(int pageNumber)
+    {
+        pageImage.sprite = Resources.Load<Sprite>("Art/Book/Pages/" + pageNumber);
+    }
+
+    public void ClearPage()
+    {
+        pageImage.sprite = Resources.Load<Sprite>("Art/Book/Pages/999");
     }
 }

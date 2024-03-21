@@ -8,11 +8,6 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
     public int Day { get { return day; } set { this.day = value; } }
     private float money;
     public float Money { get { return money; } set { this.money = value; } }
-
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
     public void LoadData(GameData data)
     {
         this.money = data.money;

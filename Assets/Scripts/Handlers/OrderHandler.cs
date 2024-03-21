@@ -15,7 +15,6 @@ public class OrderHandler : MonoBehaviour
             Debug.Log("Found more than one Order Manager in the scene.");
         }
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void InitializeCandleMinigame(Order order)

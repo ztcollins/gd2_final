@@ -11,9 +11,12 @@ public class SceneHandler : MonoBehaviour
     // function on runtime without reference on compile time
     public string currentScene;
     public string startScene;
+
+    #region References
+        [SerializeField] private UIHandler UIHandler;
+    #endregion
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
         ChangeScene(startScene);
     }
    
@@ -55,6 +58,8 @@ public class SceneHandler : MonoBehaviour
         
         SceneManager.LoadScene(sceneName);
         currentScene = sceneName;
+        //BroadcastMessage("OnSceneChange", currentScene); MAY WANT TO EXPAND TO THIS, HAS SOME PROBLEMS RIGHT NOW THO
+        UIHandler.OnSceneChange(currentScene);
     }
 
     public void Exit()
