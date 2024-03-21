@@ -23,8 +23,8 @@ public class UIHandler : MonoBehaviour
     {
         availabilityDictionary  = new Dictionary<GameObject, string[]>
         {
-            {bookHandlerObj, new string[] {"MainMenu", "CandleScene"}},
-            {summonBookButton, new string[] {"MainMenu", "CandleScene"}}
+            {bookHandlerObj, new string[] {"MainMenu", "CandleScene", "LobbyScene"}},
+            {summonBookButton, new string[] {"MainMenu", "CandleScene", "LobbyScene"}}
         };
     }
 
