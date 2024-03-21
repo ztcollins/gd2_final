@@ -10,6 +10,7 @@ TagManager:
   - OrderHandler
   - LobbyHandler
   - CandleGenerator
+<<<<<<< HEAD
   - CandleHolder
   - MoneyEarned
   - ResultsTitle
@@ -19,6 +20,10 @@ TagManager:
   - SummonedSize
   - SummonedColor
   - SummonedType
+=======
+  - BookHandler
+  - UIHandler
+>>>>>>> book
   layers:
   - Default
   - TransparentFX

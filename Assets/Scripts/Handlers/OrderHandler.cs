@@ -19,12 +19,15 @@ public class OrderHandler : MonoBehaviour
             Debug.Log("Found more than one Order Manager in the scene.");
         }
         instance = this;
+<<<<<<< HEAD
         DontDestroyOnLoad(this.gameObject);
 
         this.size = "invalid";
         this.color = "invalid";
         this.type = "invalid";
         this.isDemonSet = false;
+=======
+>>>>>>> book
     }
 
     public void InitializeCandleMinigame(Order order)

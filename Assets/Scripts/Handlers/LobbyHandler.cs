@@ -16,7 +16,6 @@ public class LobbyHandler : MonoBehaviour
             Debug.Log("Found more than one Order Manager in the scene.");
         }
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public void SaveState(List<Customer> currentCustomers, List<Order> currentOrders, float currentMoney)
