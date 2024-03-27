@@ -9,7 +9,7 @@ public class BookHandler : MonoBehaviour
     public int pageNo = 0; //relatively unimportant for actual logic. pageArrayIndex is more important
     public List<int> pageArray;
     public int pageArrayIndex = 0;
-    bool isActive = false;
+    public bool isActive = false;
 
     //constants for the demo
     int TYPEPAGENO = 0;

@@ -34,6 +34,14 @@ public class UIHandler : MonoBehaviour
         {
             SummonBook();
         }
+        if((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && bookHandler.isActive)
+        {
+            bookHandler.PrevPage();
+        }
+        if((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && bookHandler.isActive)
+        {
+            bookHandler.NextPage();
+        }
     }
 
     public void SummonBook()
