@@ -10,6 +10,12 @@ public enum SceneHandlerInstruction
     
 }
 
+public enum RitualButtonState
+{
+    UNCLICKED = 0,
+    CONFIRM = 1,
+}
+
 public enum SizeCodes
 {
     // 4 SIZE ARRAY [0, 0, 0, 0]
