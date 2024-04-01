@@ -10,7 +10,6 @@ public class CandleGameManager : MonoBehaviour
     public GameObject prefabOrder;
     public GameObject ordersObject;
     public GameObject candleHolders;
-    public GameObject finishOrderButton;
     private Order currentOrder;
     private string currentSize;
     private string currentColor;
@@ -60,9 +59,6 @@ public class CandleGameManager : MonoBehaviour
         SetDemonStrings(innerCandleCode, middleCandleCode, outerCandleCode);
 
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentDemon(currentSize, currentColor, currentType);
-
-        finishOrderButton.SetActive(true);
-
     }
 
     public void SetDemonStrings(int codeSize, int codeColor, int codeType)
