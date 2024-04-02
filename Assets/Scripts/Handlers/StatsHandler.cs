@@ -12,9 +12,13 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         day++;
     }
 
+    public void PrevDay()
+    {
+        day--;
+    }
+
     public void SetDay(int day)
     {
-        Debug.Log("SET DAY");
         this.day = day;
     }
 
@@ -30,7 +34,6 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
 
     public void SetMoney(float money)
     {
-        Debug.Log("SET MONEY");
         this.money = money;
     }
 
@@ -47,8 +50,14 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        data.money = this.money;
-        data.day = this.day;
+        data.money = money;
+        data.day = day;
+    }
+
+    public void ForceRefresh()
+    {
+        if(GameObject.Find("HubManager") != null) GameObject.Find("HubManager").GetComponent<HubManager>().Refresh();
+        if(GameObject.Find("LobbyManager") != null) GameObject.Find("LobbyManager").GetComponent<LobbyManager>().Refresh();
     }
     
 }

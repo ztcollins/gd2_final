@@ -9,7 +9,7 @@ public class EventClickOrder : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     private void Awake()
     {
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameObject.Find("LobbyManager");
         lobbyManager = gameManager.GetComponent<LobbyManager>();
     }
 

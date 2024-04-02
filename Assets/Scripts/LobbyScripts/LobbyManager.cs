@@ -271,7 +271,7 @@ public class LobbyManager : MonoBehaviour
         GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().SaveGame();
     }
 
-    void Refresh()
+    public void Refresh()
     {
         money = statsHandler.GetMoney();
         day = statsHandler.GetDay();
