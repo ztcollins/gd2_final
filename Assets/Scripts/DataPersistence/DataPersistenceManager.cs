@@ -32,8 +32,8 @@ public class DataPersistenceManager : MonoBehaviour
         dataHandler.Save(gameData);
 
         // update stats handler to match new save data
-        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money = gameData.money;
-        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day = gameData.day;
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetMoney(gameData.money);
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetDay(gameData.day);
     }
 
     public void NewGame()
