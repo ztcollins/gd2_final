@@ -32,11 +32,11 @@ public class SceneHandler : MonoBehaviour
                 ChangeScene(instructionText);
                 break;
             case(SceneHandlerInstruction.CONTINUE):
-                ChangeScene("MainMenu");
+                ChangeScene("Hub");
                 break;
             case(SceneHandlerInstruction.NEWGAME):
                 GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().CreateNewSave();
-                ChangeScene("MainMenu"); //change to intro animation or something eventually?
+                ChangeScene("Hub"); //change to intro animation or something eventually?
                 break;
             case(SceneHandlerInstruction.FINISHORDER):
                 GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(true);

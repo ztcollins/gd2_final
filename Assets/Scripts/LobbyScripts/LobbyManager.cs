@@ -3,14 +3,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class LobbyManager : MonoBehaviour
 {
-
+    private StatsHandler statsHandler;
     public GameObject customerPrefab;
     public GameObject prefabOrder;
-    public TextMeshProUGUI moneyText;
-    public TextMeshProUGUI dayText;
     public GameObject resultsPanel;
     private GameObject ordersObject;
     private List<Customer> customerList;
@@ -19,7 +16,14 @@ public class LobbyManager : MonoBehaviour
     private int day;
     private bool isDayFinished;
 
-    void Awake() {
+    #region References
+        [SerializeField] private TextMeshProUGUI moneyText;
+        [SerializeField] private TextMeshProUGUI dayText;
+    #endregion
+
+    void Awake() 
+    {
+        statsHandler = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>();
 
         // load in lobby handler data
         List<Customer> loadedCustomers = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetCustomers();
@@ -37,7 +41,7 @@ public class LobbyManager : MonoBehaviour
         }
         else
         {
-            money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money;
+            money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
         }
 
         // customers
@@ -82,9 +86,7 @@ public class LobbyManager : MonoBehaviour
         }
 
         // reload stats
-        this.day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day;
-        SetMoney(this.money);
-        SetDay(this.day);
+        Refresh();
 
         // order complete animation?
 
@@ -172,8 +174,8 @@ public class LobbyManager : MonoBehaviour
         if(SummoningResults(orderToFinish))
         {
             // give player money
-            money += orderToFinish.GetOrderValue();
-            SetMoney(money);
+            statsHandler.AddMoney(orderToFinish.GetOrderValue());
+            Refresh();
         }
 
 
@@ -263,22 +265,18 @@ public class LobbyManager : MonoBehaviour
 
     public void FinishDay()
     {
-        this.day++;
-        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Day = this.day;
-        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().Money = this.money;
+        statsHandler.SetMoney(money);
+        statsHandler.NextDay();
         GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(null, null, 0);
         GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().SaveGame();
-        GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "MainMenu");
     }
 
-    public void SetMoney(float value)
+    void Refresh()
     {
-        moneyText.text = value.ToString("F2");
-    }
-
-     public void SetDay(int value)
-    {
-        dayText.text = value.ToString();
+        money = statsHandler.GetMoney();
+        day = statsHandler.GetDay();
+        dayText.text = "Day " + statsHandler.GetDay().ToString();
+        moneyText.text = "$" + statsHandler.GetMoney().ToString("F2");
     }
 
     // test code here
@@ -296,6 +294,8 @@ public class LobbyManager : MonoBehaviour
 
     public void Back()
     {
+        Debug.Log("LEAVING LOBBY");
+        FinishDay();
         Debug.Log("customers can be destroyed!");
         foreach(var customer in customerList)
         {
@@ -305,6 +305,7 @@ public class LobbyManager : MonoBehaviour
         GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(null, null, 0);
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(null);
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(false);
+        GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "MainMenu");
     }
 
 }

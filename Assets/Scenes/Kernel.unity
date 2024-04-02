@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScene: 
-  startScene: LobbyScene
+  startScene: MainMenu
   UIHandler: {fileID: 783963789}
 --- !u!1 &1522153255
 GameObject:
