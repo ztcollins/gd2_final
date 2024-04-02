@@ -12,11 +12,13 @@ public class HubManager : MonoBehaviour
     #region References
         [SerializeField] TextMeshProUGUI moneyText;
         [SerializeField] TextMeshProUGUI dayText;
+        [SerializeField] TextAsset eventsJson;
     #endregion
 
     public void Awake()
     {
         Refresh();
+        OnNewDay();
     }
 
     public void Refresh()
@@ -25,6 +27,21 @@ public class HubManager : MonoBehaviour
         day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetDay();
         SetMoney(money);
         SetDay(day);
+    }
+
+    public void OnNewDay()
+    {
+        //queue an event somehow?
+        DrawEventCard();
+    }
+
+    private void DrawEventCard()
+    {
+        EventCardList eventCards = JsonUtility.FromJson<EventCardList>(eventsJson.ToString());
+        foreach(EventCard eventCard in eventCards.eventCards)
+        {
+            Debug.Log(eventCard.ToString());
+        }
     }
 
     public void SetDay(int value)

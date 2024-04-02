@@ -1,0 +1,17 @@
+{
+    "eventCards":
+    [
+        {
+            "cardID":0, 
+            "cardTitle": "Card Zero",
+            "cardDescription": "A Debug Card",
+            "values": [1.0, 2.0, 3.0, 4.0]
+        },
+        {
+            "cardID":2, 
+            "cardTitle": "Card Two",
+            "cardDescription": "A Debug Card",
+            "values": [1.0, 2.0, 3.0, 4.0]
+        }
+    ]
+}
