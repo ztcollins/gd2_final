@@ -6,112 +6,63 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Order : MonoBehaviour
+public class Order
 { 
-    private Customer associatedCustomer;
-    private GameObject orderObject;
-    private String color;
-    private String size;
-    private String type;
-    private float orderValue;
-    private bool isCurrentOrder;
+    public string color;
+    public string size;
+    public string type;
+    public float value;
+    public Customer customer;
+    public bool isCurrentOrder;
+
+    #region References
+    #endregion
     
-    public void Initialize(Customer customer, GameObject order)
+    public Order(string color, string size, string type, float value)
     {
-        associatedCustomer = customer;
-        orderObject = order;
-        isCurrentOrder = false;
-
-        String[] colors = {"red", "green", "blue"};
-        String[] sizes = {"small", "medium", "large"};
-        String[] types = {"humanoid", "worm", "imp"};
-
-        int colorChoice = Random.Range(0,3);
-        int sizeChoice = Random.Range(0,3);
-        int typeChoice = Random.Range(0,3);
-        color = colors[colorChoice];
-        size = sizes[sizeChoice];
-        type = types[typeChoice];
-
-        orderValue = Random.Range(1.00f, 3.00f);
+        this.color = color;
+        this.size = size;
+        this.type = type;
+        this.value = value;
+        Debug.Log("BUILT");
     }
 
-    private void LoadOrder()
+    public string ToString()
     {
-        
+        return color + " " + size + " " + type + " " + value.ToString("F2");
     }
 
-    public void visualizeOrder() {
-        TMP_Text[] textArray = orderObject.GetComponentsInChildren<TMP_Text>();
-        foreach(var text in textArray) {
-            if(text.name == "OrderType")
+    public void SetData(Order order)
+    {
+        this.color = order.color;
+        this.size = order.size;
+        this.type = order.type;
+        this.value = order.value;
+        this.isCurrentOrder = order.isCurrentOrder;
+    }
+
+    public GameObject RenderOrder(GameObject parent)
+    {
+        GameObject orderCard = GameObject.Instantiate((GameObject)Resources.Load("Prefabs/OrderCard"), new Vector2(0, 0), Quaternion.identity, parent.transform);
+
+        TMP_Text[] textArray = orderCard.GetComponentsInChildren<TMP_Text>();
+        foreach(var text in textArray) 
+        {
+            switch(text.name)
             {
-                text.text = type;
-            }
-            else if(text.name == "OrderColor")
-            {
-                text.text = color;
-            }
-            else if(text.name == "OrderSize")
-            {
-                text.text = size;
+                case("OrderType"):
+                    text.text = type;
+                    break;
+                case("OrderColor"):
+                    text.text = color;
+                    break;
+                case("OrderSize"):
+                    text.text = size;
+                    break;
+                default:
+                    break;
             }
         }
-    }
-
-    public void SetNewOrder(Order orderToCopy, GameObject newOrderObj)
-    {
-        this.associatedCustomer = orderToCopy.associatedCustomer;
-        this.orderObject = newOrderObj;
-        this.color = orderToCopy.color;
-        this.type = orderToCopy.type;
-        this.size = orderToCopy.size;
-        this.orderValue = orderToCopy.orderValue;
-        this.isCurrentOrder = orderToCopy.isCurrentOrder;
-    }
-
-    public GameObject GetGameObject()
-    {
-        return orderObject;
-    }
-
-    public Customer GetAssociatedCustomer()
-    {
-        return associatedCustomer;
-    }
-
-    public String GetOrderColor()
-    {
-        return color;
-    }
-
-    public String GetOrderSize()
-    {
-        return size;
-    }
-
-    public String GetOrderType()
-    {
-        return type;
-    }
-
-    public float GetOrderValue()
-    {
-        return orderValue;
-    }
-
-    public bool IsCurrentOrder()
-    {
-        return isCurrentOrder;
-    }
-
-    public void SetCurrentOrder()
-    {
-        isCurrentOrder = true;
-    }
-
-    public void SetNewOrderObject(GameObject newOrderObject)
-    {
-        orderObject = newOrderObject;
+        return orderCard;
     }
 }

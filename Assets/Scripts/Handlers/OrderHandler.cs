@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class OrderHandler : MonoBehaviour
 {
-    private Order currentOrder;
+    public Order currentOrder;
+
+    public GameObject persistentParent;
     private bool isOrderComplete;
     private string size;
     private string color;
@@ -29,14 +31,15 @@ public class OrderHandler : MonoBehaviour
 
     public void InitializeCandleMinigame(Order order)
     {
-        currentOrder = order;
-        currentOrder.SetCurrentOrder();
+        order.isCurrentOrder = true;
+        SetCurrentOrder(order);
         isOrderComplete = false;
     }
 
     public void SetCurrentOrder(Order order)
     {
         currentOrder = order;
+        Debug.Log("SET CURRENT ORDER");
     }
 
     public Order GetCurrentOrder()

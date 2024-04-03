@@ -20,10 +20,10 @@ public class CandleGameManager : MonoBehaviour
     {
         // bring in order from last scene
         currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
+        if(currentOrder == null) Debug.Log("NULL ORDER");
         GameObject newOrder = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
-        currentOrder.SetNewOrderObject(newOrder);
-        currentOrder.visualizeOrder();
-        newOrder.transform.SetParent(ordersObject.transform);
+        currentOrder.SetData(currentOrder);
+        currentOrder.RenderOrder(ordersObject);
     }
 
     public void CheckCandles()

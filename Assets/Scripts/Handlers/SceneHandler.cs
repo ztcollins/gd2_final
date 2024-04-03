@@ -14,6 +14,8 @@ public class SceneHandler : MonoBehaviour
 
     #region References
         [SerializeField] private UIHandler UIHandler;
+        [SerializeField] private DataHandler dataHandler;
+        [SerializeField] private OrderHandler orderHandler;
     #endregion
     void Awake()
     {
@@ -35,12 +37,12 @@ public class SceneHandler : MonoBehaviour
                 ChangeScene("Hub");
                 break;
             case(SceneHandlerInstruction.NEWGAME):
-                GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().CreateNewSave();
+                dataHandler.CreateNewSave();
                 ChangeScene("Hub"); //change to intro animation or something eventually?
                 break;
             case(SceneHandlerInstruction.FINISHORDER):
-                GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(true);
-                GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "LobbyScene");
+                orderHandler.SetOrderComplete(true);
+                ChangeScene("LobbyScene");
                 break;
             default:
                 Debug.Log("Instruction invalid or unspecified or something");
