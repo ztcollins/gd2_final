@@ -983,6 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 681433450}
   dayText: {fileID: 1949135933}
+  eventsJson: {fileID: 4900000, guid: a41b59afd99a9594ca4abef0e67c55b1, type: 3}
 --- !u!1 &1245224873
 GameObject:
   m_ObjectHideFlags: 0

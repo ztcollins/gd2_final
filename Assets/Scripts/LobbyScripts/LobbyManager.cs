@@ -19,10 +19,17 @@ public class LobbyManager : MonoBehaviour
     #region References
         [SerializeField] private TextMeshProUGUI moneyText;
         [SerializeField] private TextMeshProUGUI dayText;
+                         private OrderHandler orderHandler;
+                         private SceneHandler sceneHandler;
+                         private DataHandler dataHandler;
+                         private LobbyHandler lobbyHandler;
     #endregion
 
     void Awake() 
     {
+        FindReferences();
+        
+        Debug.Log("AWAKE NOW");
         statsHandler = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>();
 
         // load in lobby handler data
@@ -109,9 +116,27 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
+    private void FindReferences()
+    {
+        orderHandler = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>();
+        lobbyHandler = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>();
+        sceneHandler = GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>();
+        dataHandler = GameObject.FindWithTag("DataHandler").GetComponent<DataHandler>();
+    }
+
+    private void LoadEvent()
+    {
+
+    }
+    
+    private void LoadOrder()
+    {
+
+    }
+
     public void SaveIntermediate()
     {
-        GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(customerList, orderList, money);
+        lobbyHandler.SaveState(customerList, orderList, money);
         foreach(var customer in customerList)
         {
             GameObject customerObj = customer.GetGameObject();
@@ -156,8 +181,8 @@ public class LobbyManager : MonoBehaviour
         SaveIntermediate();
 
         // start order minigame here
-        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().InitializeCandleMinigame(order);
-        GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "CandleScene");
+        orderHandler.InitializeCandleMinigame(order);
+        sceneHandler.UseInstruction(SceneHandlerInstruction.CHANGESCENE, "CandleScene");
 
         // complete order by coming back to AWAKE() with bool isOrderComplete = true
     }
@@ -184,15 +209,15 @@ public class LobbyManager : MonoBehaviour
         Destroy(orderObject);
 
         // reset current order
-        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(null);
-        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(false);
+        orderHandler.SetCurrentOrder(null);
+        orderHandler.SetOrderComplete(false);
     }
 
     public bool SummoningResults(Order currentOrder)
     {
-        string currentDemonSize = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentDemonSize();
-        string currentDemonColor = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentDemonColor();
-        string currentDemonType = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentDemonType();
+        string currentDemonSize = orderHandler.GetCurrentDemonSize();
+        string currentDemonColor = orderHandler.GetCurrentDemonColor();
+        string currentDemonType = orderHandler.GetCurrentDemonType();
 
         Debug.Log(currentDemonSize);
         Debug.Log(currentDemonColor);
@@ -267,8 +292,8 @@ public class LobbyManager : MonoBehaviour
     {
         statsHandler.SetMoney(money);
         statsHandler.NextDay();
-        GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(null, null, 0);
-        GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().SaveGame();
+        lobbyHandler.SaveState(null, null, 0);
+        dataHandler.SaveGame();
     }
 
     public void Refresh()

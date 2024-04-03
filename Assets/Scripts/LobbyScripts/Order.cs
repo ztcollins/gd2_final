@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Order : MonoBehaviour
-{
+{ 
     private Customer associatedCustomer;
     private GameObject orderObject;
     private String color;
@@ -34,6 +34,11 @@ public class Order : MonoBehaviour
         type = types[typeChoice];
 
         orderValue = Random.Range(1.00f, 3.00f);
+    }
+
+    private void LoadOrder()
+    {
+        
     }
 
     public void visualizeOrder() {
