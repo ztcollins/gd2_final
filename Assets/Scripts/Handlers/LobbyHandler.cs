@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class LobbyHandler : MonoBehaviour
 {
-    public List<Customer> customerList = null;
+    public bool isNewDay = true;
+    public List<Customer> customerList;
     public List<Order> orderList;
     private float currentMoney;
-    public static LobbyHandler instance { get; private set; }
-    
-    void Awake()
-    {
-        if(instance != null)
-        {
-            Debug.Log("Found more than one Order Manager in the scene.");
-        }
-        instance = this;
-    }
 
     public void SaveState(List<Customer> currentCustomers, List<Order> currentOrders, float currentMoney)
     {
@@ -38,6 +29,13 @@ public class LobbyHandler : MonoBehaviour
     public float GetCurrentMoney()
     {
         return this.currentMoney;
+    }
+
+    public void Reset()
+    {
+        isNewDay = true;
+        customerList = null;
+        orderList = null;
     }
 
 }

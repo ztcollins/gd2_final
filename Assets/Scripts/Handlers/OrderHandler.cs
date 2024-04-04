@@ -5,22 +5,14 @@ using UnityEngine;
 public class OrderHandler : MonoBehaviour
 {
     public Order currentOrder;
-    private bool isOrderComplete;
+    public bool isOrderComplete;
     private string size;
     private string color;
     private string type;
     private bool isDemonSet;
-    public static OrderHandler instance { get; private set; }
 
     private void Awake()
     {
-        if(instance != null)
-        {
-            Debug.Log("Found more than one Order Manager in the scene.");
-        }
-        instance = this;
-        DontDestroyOnLoad(this.gameObject);
-
         this.size = "invalid";
         this.color = "invalid";
         this.type = "invalid";
@@ -81,5 +73,15 @@ public class OrderHandler : MonoBehaviour
     public bool IsDemonSet()
     {
         return isDemonSet;
+    }
+
+    public void Reset()
+    {
+        currentOrder = null;
+        isOrderComplete = false;
+        color = "invalid";
+        type = "invalid";
+        size = "invalid";
+        isDemonSet = false;
     }
 }

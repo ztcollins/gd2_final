@@ -30,7 +30,23 @@ public class LobbyManager : MonoBehaviour
     void Awake() 
     {
         FindReferences();
-        Refresh();
+
+        if(lobbyHandler.isNewDay)
+        {
+            customerList = new List<Customer>();
+            CreateCustomerList();
+            lobbyHandler.isNewDay = false;
+            RenderCustomerList();
+        }
+        else
+        {
+            Refresh();
+        }
+        
+
+
+
+        //Refresh();
     }
 
     public void Refresh()
@@ -252,25 +268,16 @@ public class LobbyManager : MonoBehaviour
     {
         statsHandler.SetMoney(money);
         statsHandler.NextDay();
+        lobbyHandler.Reset();
+        orderHandler.currentOrder = null;
+        orderHandler.isOrderComplete = false;
         lobbyHandler.SaveState(null, null, 0);
         dataHandler.SaveGame();
     }
 
-
-
     public void Back()
     {
-        Debug.Log("LEAVING LOBBY");
         FinishDay();
-        Debug.Log("customers can be destroyed!");
-        foreach(var customer in customerList)
-        {
-            GameObject customerObj = customer.gameObject;
-            SceneManager.MoveGameObjectToScene(customerObj, SceneManager.GetActiveScene());
-        }
-        GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(null, null, 0);
-        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(null);
-        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(false);
         GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "MainMenu");
     }
 
