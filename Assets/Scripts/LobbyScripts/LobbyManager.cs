@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class LobbyManager : MonoBehaviour
 {
     public GameObject customerPrefab;
-    public GameObject prefabOrder;
+    public GameObject orderCardPrefab;
     public GameObject resultsPanel;
     private GameObject orderListObject;
+    public List<Order> orderList;
     private GameObject customerListObject;
     public List<Customer> customerList;
-    public List<Order> orderList;
+    
     private float money;
     private int day;
     private bool isDayFinished;
@@ -29,27 +30,7 @@ public class LobbyManager : MonoBehaviour
     void Awake() 
     {
         FindReferences();
-        if(orderHandler.IsOrderComplete())
-        {
-            FinishOrder(orderHandler.GetCurrentOrder());
-        }
-
-        isDayFinished = false;
-        
         Refresh();
-
-        // complete order
-        
-    }
-
-    void Update()
-    {
-        if(customerList.Count == 0 && !isDayFinished)
-        {
-            Debug.Log("DAY FINISHED!");
-            isDayFinished = true;
-            FinishDay();
-        }
     }
 
     public void Refresh()
@@ -59,27 +40,74 @@ public class LobbyManager : MonoBehaviour
         dayText.text = "Day " + statsHandler.GetDay().ToString();
         moneyText.text = "$" + statsHandler.GetMoney().ToString("F2");
 
-        ClearLists();
-        
         if((customerList = lobbyHandler.GetCustomers()) == null)
         {
             customerList = new List<Customer>();
+            Debug.Log("FAIL!");
             CreateCustomerList();
         }
-        RenderCustomerList();
-        customerListObject.SetActive(true);
+        Debug.Log(customerList);
 
         if((orderList = lobbyHandler.GetOrders()) == null)
         {
             orderList = new List<Order>();
         }
-        RenderOrderList();
+        Debug.Log(customerList.Count);
+        SaveState();
         orderListObject.SetActive(true);
+        customerListObject.SetActive(true);
+        RenderCustomerList();
+        RenderOrderList();
     }
 
-    private void ClearLists()
+        public void RenderOrderList()
     {
+        foreach(Order order in orderList)
+        {
+            order.RenderOrder(orderListObject);
+        }
+    }
 
+    void RenderCustomerList()
+    {
+        int index = 0;
+        foreach(Customer customer in customerList)
+        {
+            GameObject instantiatedCustomer = Instantiate(customerPrefab, new Vector2((index * 3) - 6, 0), Quaternion.identity, customerListObject.transform);
+            instantiatedCustomer.GetComponent<Customer>().SetData(customer);
+            index++;
+        }
+    }
+
+    void CreateCustomerList()
+    {
+        int customerCount = Random.Range(2,6);
+        Debug.Log(customerCount);
+        for(int i = 0; i < customerCount; i++)
+        {
+            CreateCustomer();
+        }
+    }
+
+    public Customer CreateCustomer() 
+    {
+        Order cOrder = GenerateOrder();
+        Customer newCustomer = new Customer(cOrder);
+        newCustomer.order.customer = newCustomer;
+        Debug.Log("Adding...");
+        customerList.Add(newCustomer);
+        return newCustomer;
+    }
+
+    private Order GenerateOrder()
+    {
+        //filler fields until loading orders works
+        string[] colors = {"red", "green", "blue"};
+        string[] sizes = {"small", "medium", "large"};
+        string[] types = {"humanoid", "worm", "imp"};
+        float value = Random.Range(1.00f, 3.00f);
+        Order newOrder = new Order(colors[Random.Range(0,3)], sizes[Random.Range(0,3)], types[Random.Range(0,3)], value);
+        return newOrder;
     }
 
     private void FindReferences()
@@ -92,16 +120,9 @@ public class LobbyManager : MonoBehaviour
         customerListObject = GameObject.Find("CustomerList");
         orderListObject = GameObject.Find("OrderList");
     }
-
-    private void LoadEvent()
-    {
-
-    }
-
-    public void SaveIntermediate()
+    public void SaveState()
     {
         lobbyHandler.SaveState(customerList, orderList, money);
-        customerListObject.SetActive(false);
     }
 
     public void HandleCustomerClick(GameObject clickedCustomer)
@@ -121,7 +142,7 @@ public class LobbyManager : MonoBehaviour
         Order order = clickedOrder.GetComponent<EventClickOrder>().order;
 
         // save the current state before leaving
-        SaveIntermediate();
+        SaveState();
 
         // start order minigame here
         orderHandler.InitializeCandleMinigame(order);
@@ -146,7 +167,7 @@ public class LobbyManager : MonoBehaviour
         orderHandler.SetCurrentOrder(null);
         orderHandler.SetOrderComplete(false);
 
-        SaveIntermediate();
+        SaveState();
         customerListObject.SetActive(true);
         Debug.Log("Your mom");
         //may need to Refresh();
@@ -235,54 +256,7 @@ public class LobbyManager : MonoBehaviour
         dataHandler.SaveGame();
     }
 
-    public void RenderOrderList()
-    {
-        foreach(Order order in orderList)
-        {
-            order.RenderOrder(orderListObject);
-            if(order.isCurrentOrder) orderHandler.SetCurrentOrder(order);
-        }
-    }
 
-    void RenderCustomerList()
-    {
-        int index = 0;
-        foreach(Customer customer in customerList)
-        {
-            GameObject instantiatedCustomer = Instantiate(customerPrefab, new Vector2((index * 3) - 6, 0), Quaternion.identity, customerListObject.transform);
-            instantiatedCustomer.GetComponent<Customer>().SetData(customer);
-            index++;
-        }
-    }
-
-    void CreateCustomerList()
-    {
-        int customerCount = Random.Range(2,6);
-        for(int i = 0; i < customerCount; i++)
-        {
-            CreateCustomer();
-        }
-    }
-
-    public Customer CreateCustomer() 
-    {
-        Order cOrder = GenerateOrder();
-        Customer newCustomer = new Customer(cOrder);
-        newCustomer.order.customer = newCustomer;
-        customerList.Add(newCustomer);
-        return newCustomer;
-    }
-
-    private Order GenerateOrder()
-    {
-        //filler fields until loading orders works
-        string[] colors = {"red", "green", "blue"};
-        string[] sizes = {"small", "medium", "large"};
-        string[] types = {"humanoid", "worm", "imp"};
-        float value = Random.Range(1.00f, 3.00f);
-        Order newOrder = new Order(colors[Random.Range(0,3)], sizes[Random.Range(0,3)], types[Random.Range(0,3)], value);
-        return newOrder;
-    }
 
     public void Back()
     {

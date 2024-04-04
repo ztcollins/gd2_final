@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LobbyHandler : MonoBehaviour
 {
-    public List<Customer> customerList;
+    public List<Customer> customerList = null;
     public List<Order> orderList;
     private float currentMoney;
     public static LobbyHandler instance { get; private set; }
