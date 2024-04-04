@@ -13,11 +13,11 @@ public class Customer : MonoBehaviour
         hasBeenClicked = false;
     }
 
-    public Order StartOrder(GameObject order) {
+    public Order StartOrder(GameObject order, OrderData orderData) {
         hasBeenClicked = true;
         associatedOrderObject = order;
         Order newOrder = order.GetComponent<Order>();
-        newOrder.Initialize(this, order);
+        newOrder.Initialize(this, order, orderData);
         customersOrder = newOrder;
         return customersOrder;
     }

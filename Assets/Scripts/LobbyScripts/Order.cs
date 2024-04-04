@@ -16,7 +16,7 @@ public class Order : MonoBehaviour
     private float orderValue;
     private bool isCurrentOrder;
     
-    public void Initialize(Customer customer, GameObject order)
+    public void Initialize(Customer customer, GameObject order, OrderData orderData)
     {
         associatedCustomer = customer;
         orderObject = order;

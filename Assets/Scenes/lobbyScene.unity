@@ -2598,6 +2598,7 @@ MonoBehaviour:
   resultsPanel: {fileID: 2139855239}
   moneyText: {fileID: 1774445288}
   dayText: {fileID: 73215080}
+  orderJson: {fileID: 4900000, guid: af408605feb2fb64abac146d659fe22c, type: 3}
 --- !u!4 &1258339460
 Transform:
   m_ObjectHideFlags: 0

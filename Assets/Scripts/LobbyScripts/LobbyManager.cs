@@ -19,10 +19,15 @@ public class LobbyManager : MonoBehaviour
     #region References
         [SerializeField] private TextMeshProUGUI moneyText;
         [SerializeField] private TextMeshProUGUI dayText;
+        [SerializeField] private TextAsset orderJson;
     #endregion
+
+    OrderData orderData;
 
     void Awake() 
     {
+        DrawOrderCard();
+
         statsHandler = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>();
 
         // load in lobby handler data
@@ -109,6 +114,12 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
+    public void DrawOrderCard()
+    {
+        OrderDataList orderDataList = JsonUtility.FromJson<OrderDataList>(orderJson.ToString());
+        orderData = orderDataList.days[day];
+    }
+
     public void SaveIntermediate()
     {
         GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SaveState(customerList, orderList, money);
@@ -140,7 +151,7 @@ public class LobbyManager : MonoBehaviour
             
             // add customer to order queue
             GameObject order = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
-            Order newOrder = customer.StartOrder(order);
+            Order newOrder = customer.StartOrder(order, orderData);
             orderList.Add(newOrder);
             newOrder.visualizeOrder();
             order.transform.SetParent(GameObject.Find("OrdersList").transform);
