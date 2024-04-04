@@ -10,8 +10,8 @@ public class LobbyManager : MonoBehaviour
     public GameObject resultsPanel;
     private GameObject orderListObject;
     private GameObject customerListObject;
-    private List<Customer> customerList;
-    private List<Order> orderList;
+    public List<Customer> customerList;
+    public List<Order> orderList;
     private float money;
     private int day;
     private bool isDayFinished;
@@ -29,17 +29,17 @@ public class LobbyManager : MonoBehaviour
     void Awake() 
     {
         FindReferences();
-        isDayFinished = false;
-
-        Refresh();
-
-        // order complete animation?
-
-        // complete order
         if(orderHandler.IsOrderComplete())
         {
             FinishOrder(orderHandler.GetCurrentOrder());
         }
+
+        isDayFinished = false;
+        
+        Refresh();
+
+        // complete order
+        
     }
 
     void Update()
@@ -107,19 +107,18 @@ public class LobbyManager : MonoBehaviour
     public void HandleCustomerClick(GameObject clickedCustomer)
     {
         Customer customer = clickedCustomer.GetComponent<Customer>();
-        clickedCustomer.GetComponent<SpriteRenderer>().color = Color.red;
-
         if(!customer.hasBeenClicked)
         {
+            customer.hasBeenClicked = true;
             orderList.Add(customer.order);
             customer.order.RenderOrder(orderListObject);
+            clickedCustomer.GetComponent<SpriteRenderer>().color = Color.red;
         }
- 
     }
 
     public void HandleOrderClick(GameObject clickedOrder)
     {
-        Order order = clickedOrder.GetComponent<Order>();
+        Order order = clickedOrder.GetComponent<EventClickOrder>().order;
 
         // save the current state before leaving
         SaveIntermediate();
@@ -132,19 +131,15 @@ public class LobbyManager : MonoBehaviour
     }
 
     public void FinishOrder(Order orderToFinish)
-    {        
+    {      
+        if(SummoningResults(orderToFinish)) statsHandler.AddMoney(orderToFinish.value);
+
         customerList.Remove(orderToFinish.customer);
         orderList.Remove(orderToFinish);
         
-        if(SummoningResults(orderToFinish))
-        {
-            // give player money
-            statsHandler.AddMoney(orderToFinish.value);
-        }
-
-
-        // remove the customer & order
+        Debug.Log(orderToFinish.customer.gameObject.transform.GetSiblingIndex());
         Destroy(orderToFinish.customer.gameObject);
+        
         
 
         // reset current order
@@ -152,6 +147,8 @@ public class LobbyManager : MonoBehaviour
         orderHandler.SetOrderComplete(false);
 
         SaveIntermediate();
+        customerListObject.SetActive(true);
+        Debug.Log("Your mom");
         //may need to Refresh();
     }
 

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CandleGameManager : MonoBehaviour
 {
@@ -21,9 +23,26 @@ public class CandleGameManager : MonoBehaviour
         // bring in order from last scene
         currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
         if(currentOrder == null) Debug.Log("NULL ORDER");
-        GameObject newOrder = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
-        currentOrder.SetData(currentOrder);
-        currentOrder.RenderOrder(ordersObject);
+        GameObject orderCard = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity, ordersObject.transform);
+
+        TMP_Text[] textArray = orderCard.GetComponentsInChildren<TMP_Text>();
+        foreach(var text in textArray) 
+        {
+            switch(text.name)
+            {
+                case("OrderType"):
+                    text.text = currentOrder.type;
+                    break;
+                case("OrderColor"):
+                    text.text = currentOrder.color;
+                    break;
+                case("OrderSize"):
+                    text.text = currentOrder.size;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void CheckCandles()

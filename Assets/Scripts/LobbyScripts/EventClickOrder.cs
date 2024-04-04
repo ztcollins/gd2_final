@@ -7,6 +7,8 @@ public class EventClickOrder : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private GameObject thisOrder;
     private LobbyManager lobbyManager;
 
+    public Order order;
+
     private void Awake()
     {
         gameManager = GameObject.Find("LobbyManager");

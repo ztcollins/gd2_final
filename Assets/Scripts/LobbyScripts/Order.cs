@@ -44,6 +44,7 @@ public class Order
     public GameObject RenderOrder(GameObject parent)
     {
         GameObject orderCard = GameObject.Instantiate((GameObject)Resources.Load("Prefabs/OrderCard"), new Vector2(0, 0), Quaternion.identity, parent.transform);
+        orderCard.GetComponent<EventClickOrder>().order = this;
 
         TMP_Text[] textArray = orderCard.GetComponentsInChildren<TMP_Text>();
         foreach(var text in textArray) 

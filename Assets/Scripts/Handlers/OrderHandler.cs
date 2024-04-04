@@ -5,8 +5,6 @@ using UnityEngine;
 public class OrderHandler : MonoBehaviour
 {
     public Order currentOrder;
-
-    public GameObject persistentParent;
     private bool isOrderComplete;
     private string size;
     private string color;
