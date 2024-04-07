@@ -12,6 +12,7 @@ public class UIHandler : MonoBehaviour
         [SerializeField] private BookHandler bookHandler;
         [SerializeField] private GameObject bookHandlerObj;
         [SerializeField] private GameObject summonBookButton;
+        [SerializeField] private GameObject statsPanel;
         [SerializeField] private GameObject debugMenu;
     #endregion
 
@@ -25,7 +26,8 @@ public class UIHandler : MonoBehaviour
         availabilityDictionary  = new Dictionary<GameObject, string[]>
         {
             {bookHandlerObj, new string[] {"Hub", "CandleScene", "LobbyScene"}},
-            {summonBookButton, new string[] {"Hub", "CandleScene", "LobbyScene"}}
+            {summonBookButton, new string[] {"Hub", "CandleScene", "LobbyScene"}},
+            {statsPanel, new string[] {"Hub", "LobbyScene"}}
         };
     }
 

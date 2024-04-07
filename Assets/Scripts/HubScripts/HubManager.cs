@@ -15,8 +15,6 @@ public class HubManager : MonoBehaviour
     private Image selectedButton;
 
     #region References
-        [SerializeField] TextMeshProUGUI moneyText;
-        [SerializeField] TextMeshProUGUI dayText;
         [SerializeField] Image newsButton;
         [SerializeField] Image shopButton;
         [SerializeField] GameObject newsPanel;
@@ -35,8 +33,8 @@ public class HubManager : MonoBehaviour
         money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
         day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetDay();
         items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
-        SetMoney(money);
-        SetDay(day);
+
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().VisualizeCurrentValues();
         SetItems(items);
     }
 
@@ -89,6 +87,7 @@ public class HubManager : MonoBehaviour
 
     public void BuyItem(string itemUnparsed)
     {
+        money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
         string[] splitString = itemUnparsed.Split(",");
         string itemToBuy = splitString[0];
         float price = float.Parse(splitString[1]);
@@ -101,7 +100,7 @@ public class HubManager : MonoBehaviour
 
             // add new item
             GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().AddGeneric(itemToBuy);
-            GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().ForceRefresh();
+            this.Refresh();
         }
         else
         {
@@ -132,15 +131,5 @@ public class HubManager : MonoBehaviour
             newText.alpha = 255;
             newText.font = this.itemsFont;
         }
-    }
-
-    public void SetDay(int value)
-    {
-        dayText.text = "Day " + value.ToString();
-    }
-
-    public void SetMoney(float value)
-    {
-        moneyText.text = "$" + value.ToString("F2");
     }
 }

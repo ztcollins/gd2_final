@@ -13,11 +13,6 @@ public class LobbyManager : MonoBehaviour
     private float money;
     private int day;
 
-    #region References
-        [SerializeField] private TextMeshProUGUI moneyText;
-        [SerializeField] private TextMeshProUGUI dayText;
-    #endregion
-
     void Start() 
     {
         statsHandler = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>();
@@ -268,8 +263,7 @@ public class LobbyManager : MonoBehaviour
     {
         money = statsHandler.GetMoney();
         day = statsHandler.GetDay();
-        dayText.text = "Day " + statsHandler.GetDay().ToString();
-        moneyText.text = "$" + statsHandler.GetMoney().ToString("F2");
+        statsHandler.VisualizeCurrentValues();
     }
 
     // test code here

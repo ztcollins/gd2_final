@@ -34,6 +34,9 @@ public class DataPersistenceManager : MonoBehaviour
         // update stats handler to match new save data
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetMoney(gameData.money);
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetDay(gameData.day);
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetCurrentXP(gameData.currentXP);
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetRequiredXP(gameData.requiredXP);
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetReputationLevel(gameData.reputationLevel);
 
         // update item handler
         GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().SetItems(gameData.items);

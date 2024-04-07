@@ -20,6 +20,7 @@ public class CandleGameManager : MonoBehaviour
     {
         // bring in order from last scene
         currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
+        Debug.Log("DEBUG RISK VAL: " + currentOrder.GetRiskValue());
         GameObject newOrder = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
         currentOrder.SetNewOrderObject(newOrder);
         currentOrder.visualizeOrder();

@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 9142970266191489979}
   - component: {fileID: 3940320081022293418}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: OrderRisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 5861837607562463711}
   - component: {fileID: 1128958390958741848}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: OrderPay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
