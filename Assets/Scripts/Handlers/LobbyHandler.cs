@@ -16,6 +16,9 @@ public class LobbyHandler : MonoBehaviour
             Debug.Log("Found more than one Order Manager in the scene.");
         }
         instance = this;
+
+        customerList = new List<Customer>();
+        orderList = new List<Order>();
     }
 
     public void SaveState(List<Customer> currentCustomers, List<Order> currentOrders, float currentMoney)
@@ -38,6 +41,11 @@ public class LobbyHandler : MonoBehaviour
     public float GetCurrentMoney()
     {
         return this.currentMoney;
+    }
+
+    public void SetCurrentMoney(float money)
+    {
+        this.currentMoney = money;
     }
 
 }

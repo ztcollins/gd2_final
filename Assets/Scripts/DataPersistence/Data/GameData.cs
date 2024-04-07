@@ -17,7 +17,7 @@ public class GameData
         this.items = new Dictionary<string, int>
         {
             // starting items
-            { "candles", 100 },
+            { "candles", 50 },
         };
     }
 }

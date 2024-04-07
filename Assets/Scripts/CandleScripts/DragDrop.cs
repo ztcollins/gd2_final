@@ -50,13 +50,11 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("drag end");
-
         List<RaycastResult> results = new List<RaycastResult>();
 		EventSystem.current.RaycastAll(eventData, results);
+        
         if(results.Count > 0)
         {
-            Debug.Log("i hit something");
             GameObject currentlyHovered = results.First().gameObject;
             if(currentlyHovered.tag == "CandleHolder")
             {
