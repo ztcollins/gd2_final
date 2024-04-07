@@ -1,20 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
+
 //using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Canvas canvas;
+    private Dictionary<string, int> items;
+    private TextMeshProUGUI candleCounter;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GameObject.Find("CandleGameCanvas").GetComponent<Canvas>();
+        items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
+        candleCounter = GameObject.Find("CandleCounter").GetComponent<TextMeshProUGUI>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -37,20 +44,43 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnDrag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnEndDrag");
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        Debug.Log("drag end");
+
+        List<RaycastResult> results = new List<RaycastResult>();
+		EventSystem.current.RaycastAll(eventData, results);
+        if(results.Count > 0)
+        {
+            Debug.Log("i hit something");
+            GameObject currentlyHovered = results.First().gameObject;
+            if(currentlyHovered.tag == "CandleHolder")
+            {
+                canvasGroup.alpha = 1f;
+                canvasGroup.blocksRaycasts = true;
+            }
+            else
+            {
+                items["candles"] += 1;
+                candleCounter.text = "x" + items["candles"];
+                GameObject.Destroy(this.gameObject);
+            }
+        }
+        else
+        {
+            items["candles"] += 1;
+            candleCounter.text = "x" + items["candles"];
+            GameObject.Destroy(this.gameObject);
+        }
+
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log("OnPointerDown");
+        Debug.Log("im being dropped!");
     }
 }

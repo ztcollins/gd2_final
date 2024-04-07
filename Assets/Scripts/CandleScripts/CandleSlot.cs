@@ -15,9 +15,6 @@ public class CandleSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("OnDrop");
-        Debug.Log(eventData.pointerDrag.name);
-        
         if(eventData.pointerDrag != null && eventData.pointerDrag.tag != "CandleGenerator") {
             eventData.pointerDrag.transform.SetParent(this.gameObject.transform);
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);

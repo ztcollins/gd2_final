@@ -29,6 +29,14 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
         }
     }
 
+    public void DecreaseGeneric(string itemToRemove)
+    {
+        if(items.Keys.Contains(itemToRemove) && items[itemToRemove] > 0)    
+        {
+            items[itemToRemove] -= 1;
+        }
+    }
+
     public Dictionary<string, int> GetItems()
     {
         return items;
