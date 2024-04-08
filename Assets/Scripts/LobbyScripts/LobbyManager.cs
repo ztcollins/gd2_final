@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -192,6 +193,11 @@ public class LobbyManager : MonoBehaviour
         {
             isCorrect = true;
             results = "SUCCESS";
+            if(Random.Range(0, 100) < currentOrder.GetRiskValue())
+            {
+                isCorrect = false;
+                results = "DEMON ESCAPED";
+            }
         }
 
         TextMeshProUGUI[] textToChange = resultsPanel.GetComponentsInChildren<TextMeshProUGUI>();
@@ -231,6 +237,13 @@ public class LobbyManager : MonoBehaviour
                     break;
                 case "SummonedType" :
                     text.text = currentDemonType;
+                    break;
+                case "SummonedRisk" :
+                    text.text = currentOrder.GetRiskValue().ToString() + "%";
+                    if(currentOrder.GetRiskValue() == 0)
+                    {
+                        text.color = Color.green;
+                    }
                     break;
                 default:
                     break;

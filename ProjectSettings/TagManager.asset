@@ -12,6 +12,15 @@ TagManager:
   - LobbyHandler
   - SceneHandler
   - ItemHandler
+  - MoneyEarned
+  - SummonedType
+  - RequestColor
+  - ResultsTitle
+  - SummonedColor
+  - RequestSize
+  - RequestType
+  - SummonedSize
+  - SummonedRisk
   layers:
   - Default
   - TransparentFX
