@@ -126,9 +126,10 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
     {
         dayText.text = "Day " + day.ToString();
         moneyText.text = "$" + money.ToString("F2");
-        reputationLevelText.text = "Reputation Lvl " + reputationLevel.ToString();
+        reputationLevelText.text = "Reputation Level " + reputationLevel.ToString();
         xpBar.SetMaxXp(requiredXP);
         xpBar.SetXp(currentXP);
+        xpBar.Render();
     }
     
 }
