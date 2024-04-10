@@ -9,7 +9,10 @@ public class CandleGameManager : MonoBehaviour
 {
     public GameObject prefabOrder;
     public GameObject ordersObject;
+    public GameObject prefabItem;
+    public GameObject itemsObject;
     public GameObject candleHolders;
+
     private Order currentOrder;
     private string currentSize;
     private string currentColor;
@@ -25,6 +28,9 @@ public class CandleGameManager : MonoBehaviour
         currentOrder.SetNewOrderObject(newOrder);
         currentOrder.visualizeOrder();
         newOrder.transform.SetParent(ordersObject.transform, false);
+
+        // handle items
+        this.InitializeItems();
     }
 
     public void CheckCandles()
@@ -108,6 +114,61 @@ public class CandleGameManager : MonoBehaviour
             }
         }
         return code;
+    }
+
+    public void InitializeItems()
+    {
+
+        var items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
+
+        foreach(var itemKey in items.Keys)
+        {
+            if(itemKey != "candles")
+            {
+                int itemCount = items[itemKey];
+                if(itemCount > 0)
+                {
+                    GameObject newItem = GameObject.Instantiate(prefabItem, new Vector2(0, 0), Quaternion.identity);
+                    
+                    // initialize item object
+                    newItem.GetComponent<Item>().SetItem(itemKey, itemCount);
+
+                    // attach to items list
+                    newItem.transform.SetParent(itemsObject.transform, false);
+                }
+            }
+        }
+    }
+
+    public void ChangeRisk(int amount, bool positive)
+    {
+        int currentRisk = currentOrder.GetRiskValue();
+        if(positive)
+        {
+            if(currentRisk + amount >= 100)
+            {
+                currentOrder.SetRiskValue(100);
+            }
+            else
+            {
+                currentOrder.SetRiskValue(currentOrder.GetRiskValue() + amount);
+            }
+
+        }
+        else
+        {
+            if(currentRisk - amount <= 0)
+            {
+                currentOrder.SetRiskValue(0);
+            }
+            else
+            {
+                currentOrder.SetRiskValue(currentOrder.GetRiskValue() - amount);
+            }
+            
+        }
+        currentOrder.RefreshRisk();
+        
     }
 
 }

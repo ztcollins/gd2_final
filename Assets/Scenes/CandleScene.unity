@@ -1044,7 +1044,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -160, y: -291}
-  m_SizeDelta: {x: 250, y: 500}
+  m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652634598
 MonoBehaviour:
@@ -1433,6 +1433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabOrder: {fileID: 4575438155148094918, guid: e44309afd828e4c47a7b39692c86657d, type: 3}
   ordersObject: {fileID: 632732858}
+  prefabItem: {fileID: 4399827686104073623, guid: e7396251a33b52b4c8ebaf7495607462, type: 3}
+  itemsObject: {fileID: 1277644584}
   candleHolders: {fileID: 1110160699}
 --- !u!224 &845277447
 RectTransform:
@@ -1579,7 +1581,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -23}
-  m_SizeDelta: {x: 200, y: 400}
+  m_SizeDelta: {x: 250, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904423243
 MonoBehaviour:
@@ -3461,7 +3463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 22, y: 1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878686870
