@@ -59,7 +59,7 @@ public class LobbyManager : MonoBehaviour
                 Order newOrder = newOrderObj.GetComponent<Order>();
                 newOrder.SetNewOrder(order, newOrderObj);
                 newOrder.visualizeOrder();
-                newOrder.transform.SetParent(ordersObject.transform);
+                newOrder.transform.SetParent(ordersObject.transform, false);
 
                 if(newOrder.IsCurrentOrder())
                 {
@@ -130,7 +130,7 @@ public class LobbyManager : MonoBehaviour
             Order newOrder = customer.StartOrder(order);
             
             newOrder.visualizeOrder();
-            order.transform.SetParent(GameObject.Find("OrdersList").transform);
+            order.transform.SetParent(GameObject.Find("OrdersList").transform, false);
             GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetOrders().Add(newOrder);
         }
  
