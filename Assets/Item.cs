@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
 {
     private string itemName;
 
-    public void SetItem(string itemName)
+    public void SetItemName(string itemName)
     {
         this.itemName = itemName;
         GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/Resources/Art/temp/perfume.jpg");

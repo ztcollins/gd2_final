@@ -9,7 +9,10 @@ public class CandleGameManager : MonoBehaviour
 {
     public GameObject prefabOrder;
     public GameObject ordersObject;
+    public GameObject prefabItem;
+    public GameObject itemsObject;
     public GameObject candleHolders;
+
     private Order currentOrder;
     private string currentSize;
     private string currentColor;
@@ -116,6 +119,19 @@ public class CandleGameManager : MonoBehaviour
     public void InitializeItems()
     {
 
+        var items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
+
+        foreach(var itemKey in items.Keys)
+        {
+            if(itemKey != "candles")
+            {
+                GameObject newItem = GameObject.Instantiate(prefabItem, new Vector2(0, 0), Quaternion.identity);
+
+
+                // attach to items list
+                newItem.transform.SetParent(itemsObject.transform, false);
+            }
+        }
     }
 
 }
