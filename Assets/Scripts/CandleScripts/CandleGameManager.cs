@@ -125,13 +125,50 @@ public class CandleGameManager : MonoBehaviour
         {
             if(itemKey != "candles")
             {
-                GameObject newItem = GameObject.Instantiate(prefabItem, new Vector2(0, 0), Quaternion.identity);
+                int itemCount = items[itemKey];
+                if(itemCount > 0)
+                {
+                    GameObject newItem = GameObject.Instantiate(prefabItem, new Vector2(0, 0), Quaternion.identity);
+                    
+                    // initialize item object
+                    newItem.GetComponent<Item>().SetItem(itemKey, itemCount);
 
-
-                // attach to items list
-                newItem.transform.SetParent(itemsObject.transform, false);
+                    // attach to items list
+                    newItem.transform.SetParent(itemsObject.transform, false);
+                }
             }
         }
+    }
+
+    public void ChangeRisk(int amount, bool positive)
+    {
+        int currentRisk = currentOrder.GetRiskValue();
+        if(positive)
+        {
+            if(currentRisk + amount >= 100)
+            {
+                currentOrder.SetRiskValue(100);
+            }
+            else
+            {
+                currentOrder.SetRiskValue(currentOrder.GetRiskValue() + amount);
+            }
+
+        }
+        else
+        {
+            if(currentRisk - amount <= 0)
+            {
+                currentOrder.SetRiskValue(0);
+            }
+            else
+            {
+                currentOrder.SetRiskValue(currentOrder.GetRiskValue() - amount);
+            }
+            
+        }
+        currentOrder.RefreshRisk();
+        
     }
 
 }

@@ -186,4 +186,24 @@ public class Order : MonoBehaviour
     {
         return riskValue;
     }
+
+    public void SetRiskValue(int riskValue)
+    {
+        this.riskValue = riskValue;
+    }
+
+    public void RefreshRisk()
+    {
+        TMP_Text[] textArray = orderObject.GetComponentsInChildren<TMP_Text>();
+        foreach(var text in textArray) {
+            if(text.name == "OrderRisk")
+            {
+                text.text = riskValue.ToString() + "%";
+                if(isRiskyOrder)
+                {
+                    text.color = Color.red;
+                }
+            }
+        }
+    }
 }

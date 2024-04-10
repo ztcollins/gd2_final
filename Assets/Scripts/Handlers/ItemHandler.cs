@@ -59,7 +59,8 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
 
     public void HandleItemClicked(Item itemClicked)
     {
-
+        itemClicked.Useitem();
+        DecreaseGeneric(itemClicked.GetName());
     }
 
 }
