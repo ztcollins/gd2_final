@@ -24,7 +24,7 @@ public class CandleGameManager : MonoBehaviour
         GameObject newOrder = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
         currentOrder.SetNewOrderObject(newOrder);
         currentOrder.visualizeOrder();
-        newOrder.transform.SetParent(ordersObject.transform);
+        newOrder.transform.SetParent(ordersObject.transform, false);
 
         // handle items
         this.InitializeItems();
