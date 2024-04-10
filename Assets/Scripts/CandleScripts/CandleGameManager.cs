@@ -25,6 +25,9 @@ public class CandleGameManager : MonoBehaviour
         currentOrder.SetNewOrderObject(newOrder);
         currentOrder.visualizeOrder();
         newOrder.transform.SetParent(ordersObject.transform);
+
+        // handle items
+        this.InitializeItems();
     }
 
     public void CheckCandles()
@@ -108,6 +111,11 @@ public class CandleGameManager : MonoBehaviour
             }
         }
         return code;
+    }
+
+    public void InitializeItems()
+    {
+
     }
 
 }

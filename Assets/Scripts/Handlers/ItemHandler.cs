@@ -57,4 +57,9 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
         data.items = items;
     }
 
+    public void HandleItemClicked(Item itemClicked)
+    {
+
+    }
+
 }
