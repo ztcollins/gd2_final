@@ -38,6 +38,11 @@ public class LobbyHandler : MonoBehaviour
         return this.orderList;
     }
 
+    public void SetOrders(List<Order> newList)
+    {
+        this.orderList = newList;
+    }
+
     public float GetCurrentMoney()
     {
         return this.currentMoney;

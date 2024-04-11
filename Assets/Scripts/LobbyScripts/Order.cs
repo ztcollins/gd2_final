@@ -17,14 +17,12 @@ public class Order : MonoBehaviour
     private float orderValue;
     private int moneyDisplay; // 1 is smallest, 6 is largest
     private int riskValue; // 0 to 100 %
-    private bool isCurrentOrder;
     private bool isRiskyOrder;
     
     public void Initialize(Customer customer, GameObject order)
     {
         associatedCustomer = customer;
         orderObject = order;
-        isCurrentOrder = false;
 
         String[] colors = {"red", "green", "blue"};
         String[] sizes = {"small", "medium", "large"};
@@ -131,7 +129,6 @@ public class Order : MonoBehaviour
         this.type = orderToCopy.type;
         this.size = orderToCopy.size;
         this.orderValue = orderToCopy.orderValue;
-        this.isCurrentOrder = orderToCopy.isCurrentOrder;
         this.moneyDisplay = orderToCopy.moneyDisplay;
         this.isRiskyOrder = orderToCopy.isRiskyOrder;
         this.riskValue = orderToCopy.riskValue;
@@ -165,16 +162,6 @@ public class Order : MonoBehaviour
     public float GetOrderValue()
     {
         return orderValue;
-    }
-
-    public bool IsCurrentOrder()
-    {
-        return isCurrentOrder;
-    }
-
-    public void SetCurrentOrder()
-    {
-        isCurrentOrder = true;
     }
 
     public void SetNewOrderObject(GameObject newOrderObject)

@@ -23,7 +23,7 @@ public class LobbyManager : MonoBehaviour
         List<Order> loadedOrders = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetOrders();
         float loadedMoney = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetCurrentMoney();
 
-        // reload lobby data
+        // load the orders list (empty)
         ordersObject = GameObject.Find("OrdersList");
 
         // money
@@ -51,22 +51,30 @@ public class LobbyManager : MonoBehaviour
             CreateNewCustomers();
         }
 
+        // complete order
+        Order currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
+        bool isCurrentOrderComplete = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().IsOrderComplete();
+        if(isCurrentOrderComplete)
+        {
+            FinishOrder(currentOrder);
+            loadedOrders = GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().GetOrders();
+        }
+
         // orders
         if(loadedOrders.Count > 0)
         {
+            List<Order> newRenderedOrders = new List<Order>();
             foreach(var order in loadedOrders)
             {
+                Debug.Log("ORDER ADDED HERE!");
                 GameObject newOrderObj = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
                 Order newOrder = newOrderObj.GetComponent<Order>();
                 newOrder.SetNewOrder(order, newOrderObj);
                 newOrder.visualizeOrder();
                 newOrder.transform.SetParent(ordersObject.transform, false);
-
-                if(newOrder.IsCurrentOrder())
-                {
-                    GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(newOrder);
-                }
+                newRenderedOrders.Add(newOrder);
             }
+            GameObject.FindWithTag("LobbyHandler").GetComponent<LobbyHandler>().SetOrders(newRenderedOrders);
         }
         else
         {
@@ -75,16 +83,6 @@ public class LobbyManager : MonoBehaviour
 
         // reload stats
         Refresh();
-
-        // order complete animation?
-
-        // complete order
-        Order currentOrder = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().GetCurrentOrder();
-        bool isCurrentOrderComplete = GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().IsOrderComplete();
-        if(isCurrentOrderComplete)
-        {
-            FinishOrder(currentOrder);
-        }
     }
 
     void Update()
@@ -146,6 +144,7 @@ public class LobbyManager : MonoBehaviour
 
         // start order minigame here
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().InitializeCandleMinigame(order);
+        GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentOrder(order);
         GameObject.FindWithTag("SceneHandler").GetComponent<SceneHandler>().UseInstruction(SceneHandlerInstruction.CHANGESCENE, "CandleScene");
 
         // complete order by coming back to AWAKE() with bool isOrderComplete = true

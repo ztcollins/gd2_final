@@ -29,9 +29,8 @@ public class OrderHandler : MonoBehaviour
 
     public void InitializeCandleMinigame(Order order)
     {
-        currentOrder = order;
-        currentOrder.SetCurrentOrder();
         isOrderComplete = false;
+        this.SetCurrentOrder(order);
     }
 
     public void SetCurrentOrder(Order order)
