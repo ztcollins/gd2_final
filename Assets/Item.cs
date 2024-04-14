@@ -15,8 +15,7 @@ public class Item : MonoBehaviour
         this.itemCount = itemCount;
         
         SetCounter(this.itemCount);
-        // expand this out
-        GetComponent<Image>().sprite = Resources.Load<Sprite>("Art/temp/perfume");
+        GetComponent<Image>().sprite = GetSprite(itemName);
     }
 
     public string GetName()
@@ -31,19 +30,38 @@ public class Item : MonoBehaviour
 
     public void Useitem()
     {
-        this.itemCount--;
-        SetCounter(this.itemCount);
-
-        // item effects here (expand)
-        if(this.itemName == "cheap perfume")
+        if(this.itemCount > 0)
         {
-            GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(20, false);
+            this.itemCount--;
+            SetCounter(this.itemCount);
+
+            // item effects here (expand)
+            if(this.itemName == "cheap perfume")
+            {
+                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(20, false);
+            }
         }
     }
 
     public void SetCounter(int newNumber)
     {
         this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "x" + newNumber;
+    }
+
+    public Sprite GetSprite(string itemName)
+    {
+        if(itemName == "cheap perfume")
+        {
+            return Resources.Load<Sprite>("Art/temp/perfume");
+        }
+        else if(itemName == "holy water")
+        {
+            return Resources.Load<Sprite>("Art/temp/holyWaterTempAsset");
+        }
+        else
+        {
+            return Resources.Load<Sprite>("Art/Sprites/placeholder");
+        }
     }
 
 }
