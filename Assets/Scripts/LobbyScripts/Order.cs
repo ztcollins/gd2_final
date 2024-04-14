@@ -15,6 +15,7 @@ public class Order : MonoBehaviour
     private String size;
     private String type;
     private float orderValue;
+    private int xpEarned;
     private int moneyDisplay; // 1 is smallest, 6 is largest
     private int riskValue; // 0 to 100 %
     private bool isRiskyOrder;
@@ -81,7 +82,18 @@ public class Order : MonoBehaviour
         {
             isRiskyOrder = false;
         }
+
+        // add reputation level scalar
+        orderValue *= GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetReputationLevel();
         
+        // xp earned here
+        xpEarned = Random.Range(2, 4);
+
+        xpEarned *= moneyDisplay;
+        if(isRiskyOrder)
+        {
+            xpEarned *= 2;
+        }
     }
 
     public void visualizeOrder() {
@@ -109,6 +121,7 @@ public class Order : MonoBehaviour
             }
             else if(text.name == "OrderPay")
             {
+                text.text = "$";
                 for(int i = 1; i < moneyDisplay; i++)
                 {
                     text.text += "$";
@@ -172,6 +185,11 @@ public class Order : MonoBehaviour
     public int GetRiskValue()
     {
         return riskValue;
+    }
+
+    public int GetXpEarned()
+    {
+        return xpEarned;
     }
 
     public void SetRiskValue(int riskValue)

@@ -21,6 +21,10 @@ TagManager:
   - RequestType
   - SummonedSize
   - SummonedRisk
+  - CandleHolder
+  - CandleGenerator
+  - ReputationMultiplier
+  - XpEarned
   layers:
   - Default
   - TransparentFX

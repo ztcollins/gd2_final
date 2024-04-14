@@ -66,7 +66,6 @@ public class LobbyManager : MonoBehaviour
             List<Order> newRenderedOrders = new List<Order>();
             foreach(var order in loadedOrders)
             {
-                Debug.Log("ORDER ADDED HERE!");
                 GameObject newOrderObj = Instantiate(prefabOrder, new Vector2(0, 0), Quaternion.identity);
                 Order newOrder = newOrderObj.GetComponent<Order>();
                 newOrder.SetNewOrder(order, newOrderObj);
@@ -161,8 +160,9 @@ public class LobbyManager : MonoBehaviour
         
         if(SummoningResults(orderToFinish))
         {
-            // give player money
+            // give player money & xp
             statsHandler.AddMoney(orderToFinish.GetOrderValue());
+            statsHandler.AddCurrentXp(orderToFinish.GetXpEarned());
             Refresh();
         }
 
@@ -242,6 +242,20 @@ public class LobbyManager : MonoBehaviour
                     if(currentOrder.GetRiskValue() == 0)
                     {
                         text.color = Color.green;
+                    }
+                    break;
+                case "ReputationMultiplier" :
+                    text.text = "x" + GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetReputationLevel().ToString();
+                    break;
+                case "XpEarned" :
+                    if(isCorrect)
+                    {
+                        text.text = currentOrder.GetXpEarned().ToString() + " xp";
+                    }
+                    else
+                    {
+                        text.text = "0 xp";
+                        text.color = Color.red;
                     }
                     break;
                 default:
