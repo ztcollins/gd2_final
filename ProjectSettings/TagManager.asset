@@ -3,7 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DataHandler
+  - StatsHandler
+  - OrderHandler
+  - UIHandler
+  - BookHandler
+  - LobbyHandler
+  - SceneHandler
+  - ItemHandler
+  - MoneyEarned
+  - SummonedType
+  - RequestColor
+  - ResultsTitle
+  - SummonedColor
+  - RequestSize
+  - RequestType
+  - SummonedSize
+  - SummonedRisk
+  - CandleHolder
+  - CandleGenerator
+  - ReputationMultiplier
+  - XpEarned
   layers:
   - Default
   - TransparentFX

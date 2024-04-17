@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,13 +9,16 @@ using UnityEngine.UI;
 public class CandleGenerator : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private Canvas canvas;
+    [SerializeField] public TextMeshProUGUI candleCounter;
     public GameObject candlePrefab;
     private GameObject newCandle;
-
     private RectTransform rectTransform;
     private RectTransform newCandleRectTransform;
-    private void Awake() {
+    private Dictionary<string, int> items;
+    private void Start() {
         rectTransform = GetComponent<RectTransform>();
+        items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
+        candleCounter.text = "x" + items["candles"].ToString();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -36,6 +40,10 @@ public class CandleGenerator : MonoBehaviour, IDragHandler, IBeginDragHandler, I
         ExecuteEvents.Execute<IEndDragHandler>(this.gameObject, eventData, ExecuteEvents.endDragHandler);
         eventData.pointerDrag = newCandle;
         ExecuteEvents.Execute<IBeginDragHandler>(newCandle, eventData, ExecuteEvents.beginDragHandler);
+
+        // handle candle count & update text
+        GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().DecreaseGeneric("candles");
+        candleCounter.text = "x" + items["candles"].ToString();
     }
 
     public void OnEndDrag(PointerEventData eventData)
