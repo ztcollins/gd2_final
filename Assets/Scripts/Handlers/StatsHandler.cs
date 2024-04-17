@@ -7,30 +7,46 @@ using UnityEngine.UI;
 public class StatsHandler : MonoBehaviour, IDataPersistence
 {
     #region References
-    [SerializeField] private TextMeshProUGUI dayText;
-    [SerializeField] private TextMeshProUGUI moneyText;
-    [SerializeField] private TextMeshProUGUI reputationLevelText;
-    [SerializeField] private XpBar xpBar;
+        [SerializeField] private TextMeshProUGUI dayText;
+        [SerializeField] private TextMeshProUGUI moneyText;
+        [SerializeField] private TextMeshProUGUI reputationLevelText;
+        [SerializeField] private XpBar xpBar;
+        [SerializeField] private TextAsset orderJson;
+        [SerializeField] private TextAsset eventJson;
     #endregion
+
+    public OrderData orderData;
+    public EventCard eventCard;
     public int day;
     public float money;
     public int reputationLevel;
     public int currentXP;
     public int requiredXP;
+
+
     
     public void NextDay()
     {
         day++;
+        orderData = ParseOrderData(day);
+        eventCard = ParseEventCard(day);
+        Debug.Log(orderData.ToString());
+        Debug.Log(eventCard.ToString());
     }
 
     public void PrevDay()
     {
         day--;
+        orderData = ParseOrderData(day);
+        eventCard = ParseEventCard(day);
     }
 
     public void SetDay(int day)
     {
+        Debug.Log("SET DAY?");
         this.day = day;
+        orderData = ParseOrderData(day);
+        eventCard = ParseEventCard(day);
     }
 
     public int GetDay()
@@ -130,6 +146,32 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         xpBar.SetMaxXp(requiredXP);
         xpBar.SetXp(currentXP);
         xpBar.Render();
+    }
+
+    private OrderData ParseOrderData(int day)
+    {
+        OrderDataList orderDataList = JsonUtility.FromJson<OrderDataList>(orderJson.ToString());
+        try
+        {
+            return orderDataList.days[day];
+        }
+        catch
+        {
+            return orderDataList.days[0];
+        }
+    }
+
+    private EventCard ParseEventCard(int day)
+    {
+        EventCardList eventCardList = JsonUtility.FromJson<EventCardList>(eventJson.ToString());
+        try
+        {
+            return eventCardList.eventCards[day];
+        }
+        catch
+        {
+            return eventCardList.eventCards[0];
+        }
     }
     
 }

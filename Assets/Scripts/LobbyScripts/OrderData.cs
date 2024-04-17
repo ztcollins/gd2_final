@@ -14,6 +14,11 @@ public class OrderData
     public float orderFrequency;
     public string debugInfo;
 
+    public string ToString()
+    {
+        return debugInfo;
+    }
+
 }
 
 [System.Serializable]
