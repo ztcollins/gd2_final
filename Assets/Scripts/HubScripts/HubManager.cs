@@ -13,6 +13,7 @@ public class HubManager : MonoBehaviour
     private int day;
     private Dictionary<string, int> items;
     private Image selectedButton;
+    EventCard eventCard;
 
     #region References
         [SerializeField] Image newsButton;
@@ -21,6 +22,8 @@ public class HubManager : MonoBehaviour
         [SerializeField] GameObject shopPanel;
         [SerializeField] GameObject itemsContent;
         [SerializeField] TMP_FontAsset itemsFont;
+        [SerializeField] TextMeshProUGUI newsTitle;
+        [SerializeField] TextMeshProUGUI newsDescription;
     #endregion
 
     public void Awake()
@@ -34,6 +37,7 @@ public class HubManager : MonoBehaviour
         day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetDay();
         items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
 
+        eventCard = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetEventCard();
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().VisualizeCurrentValues();
         SetItems(items);
     }
@@ -45,6 +49,8 @@ public class HubManager : MonoBehaviour
         UnselectButton();
         SelectButton(newsButton);
 
+        newsTitle.text = eventCard.cardTitle;
+        newsDescription.text = eventCard.cardDescription;
     }
 
     public void ShopClicked()

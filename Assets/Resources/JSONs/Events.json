@@ -2,16 +2,28 @@
     "eventCards":
     [
         {
-            "cardID":0, 
+            "cardID": 0, 
             "cardTitle": "Card Zero",
             "cardDescription": "A Debug Card",
             "values": [1.0, 2.0, 3.0, 4.0]
         },
         {
-            "cardID":2, 
-            "cardTitle": "Card Two",
-            "cardDescription": "A Debug Card",
+            "cardID": 1, 
+            "cardTitle": "Welcome to your new job",
+            "cardDescription": "From here on out you work for me\n\nLove, Satan *Creepy Kiss*",
             "values": [1.0, 2.0, 3.0, 4.0]
+        },
+        {
+            "cardID": 2, 
+            "cardTitle": "Imps Outbreak",
+            "cardDescription": "Imps have taken over the city",
+            "values": [1.0, 2.0, 3.0, 4.0]
+        },
+        {
+            "cardID": 3,
+            "cardTitle": "Another news story here",
+            "cardDescription": "who could have foreseen this",
+            "values": [1.1, 2.2, 3.3, 4.4]
         }
     ]
 }

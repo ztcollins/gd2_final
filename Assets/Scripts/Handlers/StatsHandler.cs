@@ -25,14 +25,11 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
     public int requiredXP;
 
 
-    
     public void NextDay()
     {
         day++;
         orderData = ParseOrderData(day);
         eventCard = ParseEventCard(day);
-        Debug.Log(orderData.ToString());
-        Debug.Log(eventCard.ToString());
     }
 
     public void PrevDay()
@@ -44,7 +41,6 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
 
     public void SetDay(int day)
     {
-        Debug.Log("SET DAY?");
         this.day = day;
         orderData = ParseOrderData(day);
         eventCard = ParseEventCard(day);
@@ -171,7 +167,7 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         EventCardList eventCardList = JsonConvert.DeserializeObject<EventCardList>(eventJson.ToString());
         try
         {
-            return eventCardList.eventCards[day] != null ? eventCardList.eventCards[0] : eventCardList.eventCards[day];
+            return eventCardList.eventCards[day] != null ? eventCardList.eventCards[day] : eventCardList.eventCards[0];
         }
         catch
         {
