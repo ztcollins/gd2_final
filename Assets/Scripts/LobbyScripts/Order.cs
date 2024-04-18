@@ -29,47 +29,25 @@ public class Order : MonoBehaviour
         type = WeightedRandomSelection(orderData.type);
         color = WeightedRandomSelection(orderData.color);
         size = WeightedRandomSelection(orderData.size);
-        
+
         // calculate risk value & order value (can move this later)
         riskValue = 0;
         moneyDisplay = 1;
-        orderValue = Random.Range(1.00f, 3.00f); // orders are 1 to 3 dollars to start
-        if(color == "red")
-        {
-            riskValue += 10;
-            moneyDisplay += 2;
-            orderValue *= 1.5f;
-        }
-        if(type == "humanoid")
-        {
-            riskValue += 10;
-            moneyDisplay += 2;
-            orderValue *= 1.5f;
-        }
-        if(color == "green")
-        {
-            riskValue += 5;
-            moneyDisplay += 1;
-            orderValue *= 1.25f;
-        }
-        if(type == "imp")
-        {
-            riskValue += 5;
-            moneyDisplay += 1;
-            orderValue *= 1.25f;
-        }
-        if(size == "large")
-        {
-            riskValue += 5;
-            moneyDisplay += 1;
-            orderValue *= 1.25f;
-        }
+        orderValue = Random.Range(1.00f, 3.00f); //base price
+        xpEarned = Random.Range(2, 4); //base XP
 
+        //trait calculus
+        ParseType(type);
+        ParseColor(color);
+        ParseSize(size);
+
+        //other calculus
         // randomly get high risk, high rewards orders
         if(Random.Range(0, 20) == 5)
         {
             riskValue += 50;
             orderValue *= 2;
+            xpEarned *= 2;
             isRiskyOrder = true;
         }
         else
@@ -77,17 +55,12 @@ public class Order : MonoBehaviour
             isRiskyOrder = false;
         }
 
+        // multiply XP by 'cost'
+        xpEarned *= moneyDisplay;
+
         // add reputation level scalar
         orderValue *= GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetReputationLevel();
         
-        // xp earned here
-        xpEarned = Random.Range(2, 4);
-
-        xpEarned *= moneyDisplay;
-        if(isRiskyOrder)
-        {
-            xpEarned *= 2;
-        }
     }
 
     private string WeightedRandomSelection(List<Dictionary<string, float>> trait)
@@ -118,19 +91,10 @@ public class Order : MonoBehaviour
             traitValues[i] = traitValues[i] / denominator;
         }
 
-        
-
         //make weighted random selection
         float random = Random.Range(0.0f, 1.0f);
         string selection = "";
         float current = 0.0f;
-        Debug.Log(random);
-        Debug.Log("[");
-        for(int i = 0; i < traitValues.Length; i++)
-        {
-            Debug.Log(traitValues[i]);
-        }
-        Debug.Log("]");
         for(int i = 0; i < traitValues.Length; i++)
         {
             current += traitValues[i];
@@ -140,9 +104,98 @@ public class Order : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(selection);
 
         return selection;
+    }
+
+    private void ParseType(string type)
+    {
+        switch(type)
+        {
+            case("imp"):
+                riskValue += 0;
+                orderValue += 0;
+                xpEarned += 0;
+                break;
+            case("worm"):
+                riskValue += 0;
+                orderValue += 0;
+                xpEarned += 0;
+                break;
+            case("golem"):
+                riskValue += 0;
+                orderValue += 0;
+                xpEarned += 0;
+                break;
+            case("humanoid"):
+                riskValue += 0;
+                orderValue += 0;
+                xpEarned += 0;
+                break;
+            case("chimera"):
+                riskValue += 0;
+                orderValue += 0;
+                xpEarned += 0;
+                break;
+            case("serpent"):
+                riskValue += 0;
+                orderValue += 0;
+                xpEarned += 0;
+                break;
+            case("curse"):
+                riskValue += 75;
+                orderValue *= 3;
+                xpEarned *= 2;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void ParseColor(string color)
+    {
+        switch(color)
+        {
+            case("blue"):
+                break;
+            case("green"):
+                break;
+            case("yellow"):
+                break;
+            case("brown"):
+                break;
+            case("purple"):
+                break;
+            case("orange"):
+                break;
+            case("white"):
+                break;
+            case("red"):
+                break;
+            case("black"):
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void ParseSize(string size)
+    {
+        switch(size)
+        {
+            case("tiny"):
+                break;
+            case("small"):
+                break;
+            case("medium"):
+                break;
+            case("large"):
+                break;
+            case("huge"):
+                break;
+            default:
+                break;
+        }
     }
 
     public void visualizeOrder() {

@@ -19,9 +19,11 @@ public enum RitualButtonState
 public enum SizeCodes
 {
     // 4 SIZE ARRAY [0, 0, 0, 0]
+    TINY = 0, // 0000 = 0
     SMALL = 8, // 1000 = 8
-    MEDIUM = 13, // 1101 = 13
-    LARGE = 15, // 1111 = 15
+    MEDIUM = 5, // 0101 = 5
+    LARGE = 13, // 1101 = 13
+    HUGE = 15, // 1111 = 15
 }
 
 public enum ColorCodes
@@ -29,15 +31,25 @@ public enum ColorCodes
     // 6 SIZE ARRAY [0, 0, 0, 0, 0, 0]
     BLUE = 36, // 100100 = 36
     GREEN = 42, // 101010 = 42
+    YELLOW = 27, // 011011 = 27
+    BROWN = 19, // 010011 = 19
+    PURPLE = 63, // 111111 = 63
+    ORANGE = 45, // 101101 = 45
+    WHITE = 53, // 101110 = 53
     RED = 59, // 111011 = 59
+    BLACK = 46, // 110101 = 46
 }
 
 public enum TypeCodes
 {
     // 12 SIZE ARRAY [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    WORM = 650, // 001010001010
-    IMP = 2184, // 100010001000
-    HUMANOID = 2642, // 101001010010
+    IMP = 2184, // 100010001000 = 2184
+    WORM = 650, // 001010001010 = 650
+    GOLEM = 340, // 000101010100 = 340
+    HUMANOID = 2642, // 101001010010 = 2642
+    CHIMERA = 1445, // 010110100101 = 1445
+    SERPENT = 1879, // 011101010111 = 1879
+    CURSE = 3445, // 110101110101 = 3445
 }
 
 public enum BookState
