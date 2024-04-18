@@ -38,7 +38,12 @@ public class Item : MonoBehaviour
             // item effects here (expand)
             if(this.itemName == "cheap perfume")
             {
-                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(20, false);
+                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(10, false);
+            }
+
+            if(this.itemName == "holy water")
+            {
+                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(100, false);
             }
         }
     }
