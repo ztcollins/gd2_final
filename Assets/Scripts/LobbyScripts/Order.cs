@@ -26,13 +26,9 @@ public class Order : MonoBehaviour
         associatedCustomer = customer;
         orderObject = order;
 
-        Debug.Log(orderData.dayNo);
-
-        string type = WeightedRandomSelection(orderData.type);
-        string color = WeightedRandomSelection(orderData.color);
-        string size = WeightedRandomSelection(orderData.size);
-
-        Debug.Log(type + " " + color + " " + size);
+        type = WeightedRandomSelection(orderData.type);
+        color = WeightedRandomSelection(orderData.color);
+        size = WeightedRandomSelection(orderData.size);
         
         // calculate risk value & order value (can move this later)
         riskValue = 0;
@@ -122,19 +118,29 @@ public class Order : MonoBehaviour
             traitValues[i] = traitValues[i] / denominator;
         }
 
+        
+
         //make weighted random selection
         float random = Random.Range(0.0f, 1.0f);
         string selection = "";
         float current = 0.0f;
+        Debug.Log(random);
+        Debug.Log("[");
         for(int i = 0; i < traitValues.Length; i++)
         {
-            if(current >= random || i == traitValues.Length - 1) 
+            Debug.Log(traitValues[i]);
+        }
+        Debug.Log("]");
+        for(int i = 0; i < traitValues.Length; i++)
+        {
+            current += traitValues[i];
+            if(random < current || i == traitValues.Length - 1) 
             {
                 selection = traitNames[i];
                 break;
             }
-            current += traitValues[i];
         }
+        Debug.Log(selection);
 
         return selection;
     }
