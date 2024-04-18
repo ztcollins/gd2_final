@@ -11,10 +11,12 @@ public class BookHandler : MonoBehaviour
     public int pageArrayIndex = 0;
     public bool isActive = false;
 
-    //constants for the demo
-    int TYPEPAGENO = 0;
-        int COLORPAGENO = 4;
-    int SIZEPAGENO = 8;
+    //page header number
+    int TYPEPAGENO = 1;
+    int COLORPAGENO = 9;
+    int SIZEPAGENO = 19;
+
+    int PAGECOUNT = 25;
 
     #region References
         [SerializeField] private Animator bookAnimator;
@@ -46,12 +48,27 @@ public class BookHandler : MonoBehaviour
     void LoadPageArray()
     {
         pageArray = new List<int>();
-        for(int i = 0; i < 13; i++)
+        for(int i = 0; i < PAGECOUNT; i++)
         {
             pageArray.Add(i);
         }
         pageArray.Add(999);
         pageArray.Sort();
+    }
+
+    public void BookmarkType()
+    {
+        SetPage(TYPEPAGENO);
+    }
+
+    public void BookmarkSize()
+    {
+        SetPage(SIZEPAGENO);
+    }
+
+    public void BookmarkColor()
+    {
+        SetPage(COLORPAGENO);
     }
 
     public void SetPage(int pageIndex)
@@ -107,14 +124,14 @@ public class BookHandler : MonoBehaviour
 
     private void SetBookmarks(int pageNo)
     {
-        typeBookmarkL.SetActive(pageNo > TYPEPAGENO);
-        typeBookmarkR.SetActive(!(pageNo > TYPEPAGENO));
+        typeBookmarkL.SetActive(pageNo >= TYPEPAGENO);
+        typeBookmarkR.SetActive(!(pageNo >= TYPEPAGENO));
 
-        sizeBookmarkL.SetActive(pageNo > SIZEPAGENO);
-        sizeBookmarkR.SetActive(!(pageNo > SIZEPAGENO));
+        sizeBookmarkL.SetActive(pageNo >= SIZEPAGENO);
+        sizeBookmarkR.SetActive(!(pageNo >= SIZEPAGENO));
 
-        colorBookmarkL.SetActive(pageNo > COLORPAGENO);
-        colorBookmarkR.SetActive(!(pageNo > COLORPAGENO));
+        colorBookmarkL.SetActive(pageNo >= COLORPAGENO);
+        colorBookmarkR.SetActive(!(pageNo >= COLORPAGENO));
     }
 
     public void NextPage()

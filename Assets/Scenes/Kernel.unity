@@ -1358,8 +1358,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 797806969}
         m_TargetAssemblyTypeName: BookHandler, Assembly-CSharp
-        m_MethodName: SetPage
-        m_Mode: 3
+        m_MethodName: BookmarkColor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1604,9 +1604,6 @@ MonoBehaviour:
   eventJson: {fileID: 4900000, guid: a41b59afd99a9594ca4abef0e67c55b1, type: 3}
   orderData:
     dayNo: 0
-    typeValues: []
-    colorValues: []
-    sizeValues: []
     bonusMult: 0
     difficulty: 0
     orderFrequency: 0
@@ -3649,8 +3646,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 797806969}
         m_TargetAssemblyTypeName: BookHandler, Assembly-CSharp
-        m_MethodName: SetPage
-        m_Mode: 3
+        m_MethodName: BookmarkSize
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3794,8 +3791,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 797806969}
         m_TargetAssemblyTypeName: BookHandler, Assembly-CSharp
-        m_MethodName: SetPage
-        m_Mode: 3
+        m_MethodName: BookmarkType
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4477,8 +4474,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 797806969}
         m_TargetAssemblyTypeName: BookHandler, Assembly-CSharp
-        m_MethodName: SetPage
-        m_Mode: 3
+        m_MethodName: BookmarkSize
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6037,8 +6034,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 797806969}
         m_TargetAssemblyTypeName: BookHandler, Assembly-CSharp
-        m_MethodName: SetPage
-        m_Mode: 3
+        m_MethodName: BookmarkColor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6711,8 +6708,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 797806969}
         m_TargetAssemblyTypeName: BookHandler, Assembly-CSharp
-        m_MethodName: SetPage
-        m_Mode: 3
+        m_MethodName: BookmarkType
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

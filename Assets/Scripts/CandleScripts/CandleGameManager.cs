@@ -65,8 +65,6 @@ public class CandleGameManager : MonoBehaviour
     
         int specialDemon = SpecialDemonCheck(allCandles);
 
-        Debug.Log("Special Demon?: " + specialDemon);
-
         SetDemonStrings(innerCandleCode, middleCandleCode, outerCandleCode);
 
         GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetCurrentDemon(currentSize, currentColor, currentType);
