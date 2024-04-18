@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
 
 public class StatsHandler : MonoBehaviour, IDataPersistence
 {
@@ -47,6 +48,8 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         this.day = day;
         orderData = ParseOrderData(day);
         eventCard = ParseEventCard(day);
+        Debug.Log(orderData.ToString());
+        Debug.Log(eventCard.ToString());
     }
 
     public int GetDay()
@@ -150,28 +153,40 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
 
     private OrderData ParseOrderData(int day)
     {
-        OrderDataList orderDataList = JsonUtility.FromJson<OrderDataList>(orderJson.ToString());
-        try
+        OrderDataList orderDataList = JsonConvert.DeserializeObject<OrderDataList>(orderJson.ToString());
+        try 
         {
-            return orderDataList.days[day];
+            Debug.Log(orderDataList.days[day] == null);
+            return orderDataList.days[day] != null ? orderDataList.days[day] : orderDataList.days[0];
         }
         catch
         {
+            Debug.Log("could not load orders for day " + day);
             return orderDataList.days[0];
         }
     }
 
     private EventCard ParseEventCard(int day)
     {
-        EventCardList eventCardList = JsonUtility.FromJson<EventCardList>(eventJson.ToString());
+        EventCardList eventCardList = JsonConvert.DeserializeObject<EventCardList>(eventJson.ToString());
         try
         {
-            return eventCardList.eventCards[day];
+            return eventCardList.eventCards[day] != null ? eventCardList.eventCards[0] : eventCardList.eventCards[day];
         }
         catch
         {
+            Debug.Log("could not event for day " + day);
             return eventCardList.eventCards[0];
         }
     }
-    
+
+    public OrderData GetOrderData()
+    {
+        return orderData;
+    }
+
+    public EventCard GetEventCard()
+    {
+        return eventCard;
+    }    
 }

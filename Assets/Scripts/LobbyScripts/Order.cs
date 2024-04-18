@@ -6,7 +6,8 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-
+using System.Linq;
+using System.Collections.Generic;
 public class Order : MonoBehaviour
 {
     private Customer associatedCustomer;
@@ -25,16 +26,13 @@ public class Order : MonoBehaviour
         associatedCustomer = customer;
         orderObject = order;
 
-        String[] colors = {"red", "green", "blue"};
-        String[] sizes = {"small", "medium", "large"};
-        String[] types = {"humanoid", "worm", "imp"};
+        Debug.Log(orderData.dayNo);
 
-        int colorChoice = Random.Range(0,3);
-        int sizeChoice = Random.Range(0,3);
-        int typeChoice = Random.Range(0,3);
-        color = colors[colorChoice];
-        size = sizes[sizeChoice];
-        type = types[typeChoice];
+        string type = WeightedRandomSelection(orderData.type);
+        string color = WeightedRandomSelection(orderData.color);
+        string size = WeightedRandomSelection(orderData.size);
+
+        Debug.Log(type + " " + color + " " + size);
         
         // calculate risk value & order value (can move this later)
         riskValue = 0;
@@ -94,6 +92,51 @@ public class Order : MonoBehaviour
         {
             xpEarned *= 2;
         }
+    }
+
+    private string WeightedRandomSelection(List<Dictionary<string, float>> trait)
+    {
+        string[] traitNames = new string[trait.Count];
+        float[] traitValues = new float[trait.Count];
+
+        //convert dictionary into arrays
+        for(int i = 0; i < trait.Count; i++)
+        {
+            foreach(var kvp in trait[i])
+            {
+                traitNames[i] = kvp.Key;
+                traitValues[i] = kvp.Value;
+            }
+        }
+
+        //calculate denominator (sum of values)
+        float denominator = 0.0f;
+        for(int i = 0; i < traitValues.Length; i++)
+        {
+            denominator += traitValues[i];
+        }
+
+        //normalize values
+        for(int i = 0; i < traitValues.Length; i++)
+        {
+            traitValues[i] = traitValues[i] / denominator;
+        }
+
+        //make weighted random selection
+        float random = Random.Range(0.0f, 1.0f);
+        string selection = "";
+        float current = 0.0f;
+        for(int i = 0; i < traitValues.Length; i++)
+        {
+            if(current >= random || i == traitValues.Length - 1) 
+            {
+                selection = traitNames[i];
+                break;
+            }
+            current += traitValues[i];
+        }
+
+        return selection;
     }
 
     public void visualizeOrder() {

@@ -25,10 +25,7 @@ public class LobbyManager : MonoBehaviour
     void Start() 
     {
         FindReferences();
-
         ParseDay();
-
-        
 
         // load in lobby handler data
         List<Customer> loadedCustomers = lobbyHandler.GetCustomers();
@@ -117,7 +114,8 @@ public class LobbyManager : MonoBehaviour
 
     public void ParseDay()
     {
-        //
+        orderData = statsHandler.GetOrderData();
+        Debug.Log(orderData.ToString());
     }
 
     public void SaveIntermediate()
