@@ -52,6 +52,12 @@ public enum TypeCodes
     CURSE = 3445, // 110101110101 = 3445
 }
 
+public enum SpecialCodes
+{
+    // 22 SIZE ARRAY [SIZE, COLOR, TYPE]
+    BEELZEBUB = 1484117 // 0101101010010101010101 = 1484117
+}
+
 public enum BookState
 {
     MIN = -1,

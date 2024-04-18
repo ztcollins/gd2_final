@@ -62,6 +62,10 @@ public class CandleGameManager : MonoBehaviour
         int innerCandleCode = CalculateCode(innerCandles);
         int middleCandleCode = CalculateCode(middleCandles);
         int outerCandleCode = CalculateCode(outerCandles);
+    
+        int specialDemon = SpecialDemonCheck(allCandles);
+
+        Debug.Log("Special Demon?: " + specialDemon);
 
         SetDemonStrings(innerCandleCode, middleCandleCode, outerCandleCode);
 
@@ -114,6 +118,27 @@ public class CandleGameManager : MonoBehaviour
             }
         }
         return code;
+    }
+
+    public int SpecialDemonCheck(int[] inputArray)
+    {
+        Array.Reverse(inputArray);
+        int code = 0;
+        for(int i = 0; i < inputArray.Length; i++)
+        {
+            if(inputArray[i] == 1)
+            {
+                code += (int) Math.Pow(2, i);
+            }
+        }
+
+        int[] specialCodes = (int[])Enum.GetValues(typeof(SpecialCodes));
+        for(int i = 0; i < specialCodes.Length; i++)
+        {
+            if(code == specialCodes[i]) return specialCodes[i];
+        }
+
+        return 0;
     }
 
     public void InitializeItems()
