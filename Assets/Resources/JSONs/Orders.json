@@ -111,6 +111,43 @@
             "difficulty": 1.0,
             "orderFrequency": 1.0,
             "debugInfo": "day two"
+        },
+        {
+            "dayNo": 3, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day three"
         }
     ]
 }

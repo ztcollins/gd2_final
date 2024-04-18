@@ -55,6 +55,14 @@ public class Order : MonoBehaviour
             isRiskyOrder = false;
         }
 
+        if(orderValue < 4.0f) moneyDisplay = 1;
+        else if(orderValue < 8.0f) moneyDisplay = 2;
+        else if(orderValue < 12.0f) moneyDisplay = 3;
+        else if(orderValue < 18.0f) moneyDisplay = 4;
+        else moneyDisplay = 5;
+
+        if(riskValue > 100) riskValue = 100;
+
         // multiply XP by 'cost'
         xpEarned *= moneyDisplay;
 
@@ -114,33 +122,33 @@ public class Order : MonoBehaviour
         {
             case("imp"):
                 riskValue += 0;
-                orderValue += 0;
-                xpEarned += 0;
+                orderValue += 0.5f;
+                xpEarned += 1;
                 break;
             case("worm"):
-                riskValue += 0;
-                orderValue += 0;
-                xpEarned += 0;
+                riskValue += 10;
+                orderValue += 2.0f;
+                xpEarned += 1;
                 break;
             case("golem"):
                 riskValue += 0;
-                orderValue += 0;
-                xpEarned += 0;
+                orderValue += 2.5f;
+                xpEarned += 2;
                 break;
             case("humanoid"):
-                riskValue += 0;
-                orderValue += 0;
-                xpEarned += 0;
+                riskValue += 20;
+                orderValue += 3.0f;
+                xpEarned += 3;
                 break;
             case("chimera"):
-                riskValue += 0;
-                orderValue += 0;
-                xpEarned += 0;
+                riskValue += 25;
+                orderValue += 5.0f;
+                xpEarned = (int)(xpEarned * 1.25);
                 break;
             case("serpent"):
-                riskValue += 0;
-                orderValue += 0;
-                xpEarned += 0;
+                riskValue += 35;
+                orderValue += 7.0f;
+                xpEarned += 3;
                 break;
             case("curse"):
                 riskValue += 75;
@@ -157,22 +165,49 @@ public class Order : MonoBehaviour
         switch(color)
         {
             case("blue"):
+                riskValue += 0;
+                orderValue += 0.1f;
+                xpEarned += 1;
                 break;
             case("green"):
+                riskValue += 0;
+                orderValue += 0.25f;
+                xpEarned += 1;
                 break;
             case("yellow"):
+                riskValue += 0;
+                orderValue += 0.3f;
+                xpEarned += 1;
                 break;
             case("brown"):
+                riskValue += 5;
+                orderValue += 0.45f;
+                xpEarned += 1;
                 break;
             case("purple"):
+                riskValue += 10;
+                orderValue += 0.75f;
+                xpEarned += 2;
                 break;
             case("orange"):
+                riskValue += 20;
+                orderValue += 1.5f;
+                xpEarned += 3;
                 break;
             case("white"):
+                riskValue += 10;
+                orderValue += 2.0f;
+                xpEarned += 3;
                 break;
             case("red"):
+                riskValue += 30;
+                orderValue += 3.0f;
+                xpEarned += 4;
                 break;
             case("black"):
+                riskValue += 40;
+                orderValue += 5.0f;
+                xpEarned += 5;
                 break;
             default:
                 break;
@@ -184,14 +219,29 @@ public class Order : MonoBehaviour
         switch(size)
         {
             case("tiny"):
+                riskValue += 0;
+                orderValue += 0.1f;
+                xpEarned += 1;
                 break;
             case("small"):
+                riskValue += 5;
+                orderValue += 0.25f;
+                xpEarned += 1;
                 break;
             case("medium"):
+                riskValue += 10;
+                orderValue += 0.5f;
+                xpEarned += 2;
                 break;
             case("large"):
+                riskValue += 15;
+                orderValue += 1.0f;
+                xpEarned += 3;
                 break;
             case("huge"):
+                riskValue += 25;
+                orderValue += 2.0f;
+                xpEarned += 4;
                 break;
             default:
                 break;
