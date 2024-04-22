@@ -12,6 +12,7 @@ public class CandleGameManager : MonoBehaviour
     public GameObject prefabItem;
     public GameObject itemsObject;
     public GameObject candleHolders;
+    public Canvas canvas;
 
     private Order currentOrder;
     private string currentSize;
@@ -155,12 +156,37 @@ public class CandleGameManager : MonoBehaviour
                     
                     // initialize item object
                     newItem.GetComponent<Item>().SetItem(itemKey, itemCount);
+                    newItem.GetComponent<ItemGenerator>().SetCanvas(canvas);
+                    newItem.GetComponent<ItemGenerator>().SetItem(itemKey);
 
                     // attach to items list
                     newItem.transform.SetParent(itemsObject.transform, false);
                 }
             }
         }
+    }
+
+    public void UsePlacedItem()
+    {
+        string itemPlaced = GameObject.FindWithTag("ItemHolder").GetComponent<ItemSlot>().GetPlacedItem();
+        
+        if(itemPlaced != "")
+        {
+            GameObject.FindGameObjectWithTag("ItemHandler").GetComponent<ItemHandler>().DecreaseGeneric(itemPlaced);
+            Debug.Log("using " + itemPlaced);
+                        // item effects here (expand)
+            if(itemPlaced == "cheap perfume")
+            {
+                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(10, false);
+            }
+
+            if(itemPlaced == "holy water")
+            {
+                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(100, false);
+            }
+        }
+        GameObject.Destroy(GameObject.FindWithTag("ItemHolder"));
+        
     }
 
     public void ChangeRisk(int amount, bool positive)

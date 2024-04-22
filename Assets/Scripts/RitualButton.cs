@@ -17,6 +17,7 @@ public class RitualButton : MonoBehaviour
         {
             case(RitualButtonState.UNCLICKED):
                 candleGameManager.CheckCandles();
+                candleGameManager.UsePlacedItem();
                 this.GetComponent<Image>().sprite = Resources.Load<Sprite>("Art/UI/beginRitualOn");
                 state = RitualButtonState.CONFIRM;
                 break;
