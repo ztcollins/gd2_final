@@ -7,6 +7,7 @@ using UnityEngine;
 public class ItemHandler : MonoBehaviour, IDataPersistence
 {
     private Dictionary<string, int> items;
+    private Dictionary<string, bool> upgrades;
     public void ItemDebug()
     {
         Debug.Log("ITEM DEBUG: " + items["candles"]);
@@ -15,6 +16,16 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
     public void AddCandle()
     {
         items["candles"] += 1;
+    }
+
+    public void AddUpgrade(string upgrade)
+    {
+        upgrades[upgrade] = true;
+    }
+
+    public Dictionary<string, bool> GetUpgrades()
+    {
+        return upgrades;
     }
 
     public void AddGeneric(string itemToAdd)
@@ -26,6 +37,18 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
         else
         {
             items.Add(itemToAdd, 1);
+        }
+    }
+
+    public void AddGeneric(string itemToAdd, int amount)
+    {
+        if(items.Keys.Contains(itemToAdd))
+        {
+            items[itemToAdd] += amount;
+        }
+        else
+        {
+            items.Add(itemToAdd, amount);
         }
     }
 
@@ -50,17 +73,45 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         this.items = data.items;
+        this.upgrades = data.upgrades;
     }
 
     public void SaveData(ref GameData data)
     {
         data.items = items;
+        data.upgrades = upgrades;
     }
 
     public void HandleItemClicked(Item itemClicked)
     {
         itemClicked.Useitem();
         DecreaseGeneric(itemClicked.GetName());
+    }
+
+    public void EvaluateHubUpgrades()
+    {
+        Dictionary<string, bool> upgrades = GameObject.FindGameObjectWithTag("ItemHandler").GetComponent<ItemHandler>().GetUpgrades();
+        float money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
+
+        foreach(var upgradeName in upgrades.Keys)
+        {
+            if(upgrades[upgradeName])
+            {
+                // item effects here (expand)
+                if(upgradeName == "bank interest")
+                {
+                    money += 5.00f;
+                }
+
+                if(upgradeName == "candle delivery")
+                {
+
+                    GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().AddGeneric("candles", 5);
+                }
+            }
+        }
+
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetMoney(money);
     }
 
 }

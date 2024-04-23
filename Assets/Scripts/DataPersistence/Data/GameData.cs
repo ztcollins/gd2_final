@@ -11,6 +11,7 @@ public class GameData
     public int currentXP;
     public int requiredXP;
     public Dictionary<string, int> items;
+    public Dictionary<string, bool> upgrades;
 
     // initalize values for new game
     public GameData()
@@ -25,5 +26,6 @@ public class GameData
             // starting items
             { "candles", 50 },
         };
+        this.upgrades = new Dictionary<string, bool>();
     }
 }

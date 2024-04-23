@@ -12,6 +12,7 @@ public class HubManager : MonoBehaviour
     private float money;
     private int day;
     private Dictionary<string, int> items;
+    private Dictionary<string, bool> upgrades;
     private Image selectedButton;
     EventCard eventCard;
 
@@ -21,6 +22,7 @@ public class HubManager : MonoBehaviour
         [SerializeField] GameObject newsPanel;
         [SerializeField] GameObject shopPanel;
         [SerializeField] GameObject itemsContent;
+        [SerializeField] GameObject upgradesContent;
         [SerializeField] TMP_FontAsset itemsFont;
         [SerializeField] TextMeshProUGUI newsTitle;
         [SerializeField] TextMeshProUGUI newsDescription;
@@ -36,10 +38,13 @@ public class HubManager : MonoBehaviour
         money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
         day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetDay();
         items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
+        upgrades = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetUpgrades();
+
 
         eventCard = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetEventCard();
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().VisualizeCurrentValues();
         SetItems(items);
+        SetUpgrades(upgrades);
     }
 
     public void NewsClicked()
@@ -116,6 +121,31 @@ public class HubManager : MonoBehaviour
 
     }
 
+    public void BuyUpgrade(string upgradeUnparsed)
+    {
+        money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
+        string[] splitString = upgradeUnparsed.Split(",");
+        string upgradeToBuy = splitString[0];
+        float price = float.Parse(splitString[1]);
+        
+        if(money >= price)
+        {
+            // subtract money
+            money -= price;
+            GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetMoney(money);
+
+            // add new item
+            GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().AddUpgrade(upgradeToBuy);
+            this.Refresh();
+        }
+        else
+        {
+            // cant buy
+            Debug.Log("not enough money to buy " + upgradeToBuy + "!");
+        }
+
+    }
+
     public void SetItems(Dictionary<string, int> items)
     {
         //remove old items
@@ -138,4 +168,28 @@ public class HubManager : MonoBehaviour
             newText.font = this.itemsFont;
         }
     }
+
+    public void SetUpgrades(Dictionary<string, bool> upgrades)
+    {
+        //remove old upgrades
+        for(var i = upgradesContent.transform.childCount - 1; i >= 0; i--)
+        {
+            Object.Destroy(upgradesContent.transform.GetChild(i).gameObject);
+        }
+
+        //set new items
+        foreach(var upgrade in upgrades.Keys)
+        {
+            GameObject upgradeObject = new GameObject(upgrade);
+            upgradeObject.transform.parent = upgradesContent.transform;
+
+            TextMeshProUGUI newText = upgradeObject.AddComponent<TextMeshProUGUI>();
+            newText.text = upgrade;
+            newText.fontSize = 24;
+            newText.color = Color.white;
+            newText.alpha = 255;
+            newText.font = this.itemsFont;
+        }
+    }
+
 }

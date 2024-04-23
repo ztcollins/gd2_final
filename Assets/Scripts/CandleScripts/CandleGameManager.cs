@@ -174,19 +174,43 @@ public class CandleGameManager : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("ItemHandler").GetComponent<ItemHandler>().DecreaseGeneric(itemPlaced);
             Debug.Log("using " + itemPlaced);
-                        // item effects here (expand)
+            // item effects here (expand)
             if(itemPlaced == "cheap perfume")
             {
-                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(10, false);
+                ChangeRisk(10, false);
             }
 
             if(itemPlaced == "holy water")
             {
-                GameObject.Find("CandleGameManager").GetComponent<CandleGameManager>().ChangeRisk(100, false);
+                ChangeRisk(100, false);
             }
         }
         GameObject.Destroy(GameObject.FindWithTag("ItemHolder"));
         
+    }
+
+    public void EvaluateCandleGameUpgrades()
+    {
+        Dictionary<string, bool> upgrades = GameObject.FindGameObjectWithTag("ItemHandler").GetComponent<ItemHandler>().GetUpgrades();
+
+        foreach(var upgradeName in upgrades.Keys)
+        {
+            Debug.Log(upgradeName);
+            if(upgrades[upgradeName])
+            {
+                // item effects here (expand)
+                if(upgradeName == "internet bill")
+                {
+                    Debug.Log("internet bill hit");
+                    ChangeRisk(5, false);
+                }
+
+                if(upgradeName == "rodent cage" && currentSize == "tiny")
+                {
+                    ChangeRisk(100, false);
+                }
+            }
+        }
     }
 
     public void ChangeRisk(int amount, bool positive)

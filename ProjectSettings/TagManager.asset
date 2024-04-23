@@ -25,6 +25,7 @@ TagManager:
   - CandleGenerator
   - ReputationMultiplier
   - XpEarned
+  - ItemHolder
   layers:
   - Default
   - TransparentFX
