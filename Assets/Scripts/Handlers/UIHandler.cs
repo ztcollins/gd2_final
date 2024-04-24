@@ -14,6 +14,7 @@ public class UIHandler : MonoBehaviour
         [SerializeField] private GameObject summonBookButton;
         [SerializeField] private GameObject statsPanel;
         [SerializeField] private GameObject debugMenu;
+        [SerializeField] private Pointer pointer;
     #endregion
 
     void Awake()
@@ -49,6 +50,7 @@ public class UIHandler : MonoBehaviour
         {
             debugMenu.SetActive(!debugMenu.activeSelf);
         }
+        if(Input.GetKeyDown(KeyCode.Y)) pointer.SetState(PointerState.LEFT);
     }
 
     public void SummonBook()

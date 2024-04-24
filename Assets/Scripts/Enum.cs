@@ -64,3 +64,11 @@ public enum BookState
     DEFAULT = 0,
     MAX = 1,
 }
+
+public enum PointerState
+{
+    RIGHT = 0,
+    UP = 1,
+    LEFT = 2,
+    DOWN = 3,
+}
