@@ -189,6 +189,12 @@ public class LobbyManager : MonoBehaviour
             statsHandler.AddCurrentXp(orderToFinish.GetXpEarned());
             Refresh();
         }
+        else
+        {
+            statsHandler.AddMoney(-orderToFinish.GetOrderValue());
+            statsHandler.SubtractXp(orderToFinish.GetXpEarned());
+            Refresh();
+        }
 
 
         // remove the customer & order
@@ -232,7 +238,11 @@ public class LobbyManager : MonoBehaviour
                 case "MoneyEarned" :
                     if(isCorrect)
                     {
-                        text.text = currentOrder.GetOrderValue().ToString("F2");
+                        text.text = "+$"+currentOrder.GetOrderValue().ToString("F2");
+                    }
+                    else {
+                        text.text = "-$"+currentOrder.GetOrderValue().ToString("F2");
+                        text.color = Color.red;
                     }
                     
                     break;
@@ -274,11 +284,11 @@ public class LobbyManager : MonoBehaviour
                 case "XpEarned" :
                     if(isCorrect)
                     {
-                        text.text = currentOrder.GetXpEarned().ToString() + " xp";
+                        text.text = "+" + currentOrder.GetXpEarned().ToString() + " REP";
                     }
                     else
                     {
-                        text.text = "0 xp";
+                        text.text = "-" + currentOrder.GetXpEarned().ToString() + " REP";
                         text.color = Color.red;
                     }
                     break;

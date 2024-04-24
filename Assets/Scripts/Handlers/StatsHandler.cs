@@ -99,6 +99,18 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         }
     }
 
+    public void SubtractXp(int xpToRemove)
+    {
+        if(this.currentXP - xpToRemove < 0)
+        {
+            this.currentXP = 0;
+        }
+        else
+        {
+            this.currentXP = this.currentXP - xpToRemove;
+        }
+    }
+
     public void AddRequiredXp(int xpToAdd)
     {
         this.requiredXP += xpToAdd;

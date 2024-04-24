@@ -1437,7 +1437,7 @@ MonoBehaviour:
   prefabItem: {fileID: 4399827686104073623, guid: e7396251a33b52b4c8ebaf7495607462, type: 3}
   itemsObject: {fileID: 1277644584}
   candleHolders: {fileID: 1110160699}
-  canvas: {fileID: 0}
+  canvas: {fileID: 4076299}
 --- !u!224 &845277447
 RectTransform:
   m_ObjectHideFlags: 0

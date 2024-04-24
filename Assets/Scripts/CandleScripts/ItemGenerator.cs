@@ -44,10 +44,10 @@ public class ItemGenerator : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     {
         Item staticItem = new Item();
         newItem = Instantiate(itemPrefab, rectTransform.position, Quaternion.identity);
+        newItem.transform.SetParent(canvas.transform);
         newItem.GetComponent<Image>().sprite = staticItem.GetSprite(itemToGenerate);
         newItem.GetComponent<EventDragItem>().SetItem(itemToGenerate);
         newItem.GetComponent<EventDragItem>().SetText(itemCounter);
-        newItem.transform.SetParent(canvas.transform);
         newItemRectTransform = newItem.GetComponent<RectTransform>();
 
         CanvasGroup newItemCanvasGroup = newItemRectTransform.GetComponent<CanvasGroup>();
