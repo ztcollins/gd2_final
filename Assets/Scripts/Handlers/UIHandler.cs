@@ -9,12 +9,16 @@ public class UIHandler : MonoBehaviour
     Dictionary<GameObject, string[]> availabilityDictionary;
 
     #region References
+        [SerializeField] private RectTransform rectTransform;
         [SerializeField] private BookHandler bookHandler;
         [SerializeField] private GameObject bookHandlerObj;
         [SerializeField] private GameObject summonBookButton;
         [SerializeField] private GameObject statsPanel;
         [SerializeField] private GameObject debugMenu;
+        [SerializeField] private DialogueHandler dialogueHandler;
+        [SerializeField] private TutorialHandler tutorialHandler;
         [SerializeField] private Pointer pointer;
+        [SerializeField] private GameObject reputationBarObj;
     #endregion
 
     void Awake()
@@ -50,7 +54,10 @@ public class UIHandler : MonoBehaviour
         {
             debugMenu.SetActive(!debugMenu.activeSelf);
         }
-        if(Input.GetKeyDown(KeyCode.Y)) pointer.SetState(PointerState.LEFT);
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            tutorialHandler.AnimateArrow(PointerAnimationState.UNDULATE, reputationBarObj);
+        }
     }
 
     public void SummonBook()

@@ -65,10 +65,27 @@ public enum BookState
     MAX = 1,
 }
 
-public enum PointerState
+public enum PointerRotationState
 {
     RIGHT = 0,
     UP = 1,
     LEFT = 2,
     DOWN = 3,
+}
+
+public enum PointerAnimationState
+{
+    UNDULATE = 0,
+}
+
+public enum TutorialState
+{
+    BLOCKING = 0,
+}
+
+public enum TutorialActionState
+{
+    ONKEY = 0,
+    ONCLICK = 1,
+    COMPLETE = 99,
 }
