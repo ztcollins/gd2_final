@@ -67,6 +67,7 @@ public class Pointer : MonoBehaviour
     public void StopAnimation()
     {
         if(!isAnimating) return;
+        gameObject.SetActive(true);
         StopCoroutine(animationCoroutine);
         isAnimating = false;
     }

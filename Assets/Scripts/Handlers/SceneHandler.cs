@@ -14,6 +14,7 @@ public class SceneHandler : MonoBehaviour
 
     #region References
         [SerializeField] private UIHandler UIHandler;
+        [SerializeField] private TutorialHandler tutorialHandler;
     #endregion
     void Awake()
     {
@@ -37,6 +38,7 @@ public class SceneHandler : MonoBehaviour
             case(SceneHandlerInstruction.NEWGAME):
                 GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().CreateNewSave();
                 ChangeScene("Hub"); //change to intro animation or something eventually?
+                //tutorialHandler.StartTutorial();
                 break;
             case(SceneHandlerInstruction.FINISHORDER):
                 GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(true);

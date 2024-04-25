@@ -16,15 +16,9 @@ public class TutorialHandler : MonoBehaviour
         [SerializeField] DialogueHandler dialogueHandler;
     #endregion
 
-    // void Update() future functionality?
-    // {
-    //     CheckTutorials();
-    // }
-
     void Awake()
     {
         overlayObj.SetActive(false);
-        StartTutorial();
     }
 
     void Update()
@@ -60,6 +54,8 @@ public class TutorialHandler : MonoBehaviour
                 hasStep = true;
                 break;
             case(TutorialActionState.COMPLETE):
+                StopArrow();
+                overlayObj.SetActive(false);
                 hasStep = false;
                 currentTutorial = null;
                 break;
@@ -73,7 +69,7 @@ public class TutorialHandler : MonoBehaviour
 
     private void DisplayArrow()
     {
-        if(currentTutorial.GetObjectTag() == null) return;
+        if(currentTutorial.GetObjectTag() == null) return; //object needs to be active in this scene or it will not work
         Debug.Log(currentTutorial.GetObjectTag());
         Debug.Log("OBJ, " + GameObject.FindWithTag(currentTutorial.GetObjectTag()) + ", ?");
         AnimateArrow(PointerAnimationState.UNDULATE, GameObject.FindWithTag(currentTutorial.GetObjectTag()));
@@ -86,7 +82,8 @@ public class TutorialHandler : MonoBehaviour
 
     private void EvaluateCondition(TutorialActionState action)
     {
-        if(action == null) return;
+        Debug.Log(action);
+        if(action == 0) return;
         switch(action)
         {
             case(TutorialActionState.ONCLICK):
@@ -125,7 +122,6 @@ public class TutorialHandler : MonoBehaviour
     public void PointArrow(GameObject toPointObject)
     {
         PointArrow(toPointObject, CalculateRotation(toPointObject));
-
     }
 
     public void PointArrow(GameObject toPointObject, PointerRotationState direction)
@@ -214,6 +210,7 @@ public class TutorialHandler : MonoBehaviour
     public void StopArrow()
     {
         pointer.StopAnimation();
+        pointer.gameObject.SetActive(false);
     }
 
 }

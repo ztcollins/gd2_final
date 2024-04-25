@@ -85,7 +85,8 @@ public enum TutorialState
 
 public enum TutorialActionState
 {
-    ONKEY = 0,
-    ONCLICK = 1,
+    NULL = 0,
+    ONKEY = 1,
+    ONCLICK = 2,
     COMPLETE = 99,
 }
