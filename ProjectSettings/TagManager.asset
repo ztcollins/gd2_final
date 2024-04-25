@@ -26,6 +26,7 @@ TagManager:
   - ReputationMultiplier
   - XpEarned
   - ItemHolder
+  - XPBAR
   layers:
   - Default
   - TransparentFX
