@@ -24,6 +24,8 @@ public class LobbyManager : MonoBehaviour
 
     void Start() 
     {
+        // new day upgrades evaluated here
+        GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().EvaluateHubUpgrades();
         FindReferences();
         ParseDay();
 
@@ -351,9 +353,6 @@ public class LobbyManager : MonoBehaviour
         FinishDay();
         orderHandler.SetCurrentOrder(null);
         orderHandler.SetOrderComplete(false);
-
-        // new day upgrades evaluated here
-        GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().EvaluateHubUpgrades();
 
         sceneHandler.UseInstruction(SceneHandlerInstruction.CHANGESCENE, "MainMenu");
     }

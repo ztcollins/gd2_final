@@ -111,7 +111,7 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
                 if(upgradeName == "candle delivery")
                 {
 
-                    GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().AddGeneric("candles", 5);
+                    GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().AddGeneric("candles", 50);
                 }
             }
         }

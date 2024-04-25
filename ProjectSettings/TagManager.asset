@@ -27,6 +27,7 @@ TagManager:
   - XpEarned
   - ItemHolder
   - XPBAR
+  - itemDrag
   layers:
   - Default
   - TransparentFX
