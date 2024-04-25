@@ -70,6 +70,11 @@ public class ItemHandler : MonoBehaviour, IDataPersistence
         this.items = items;
     }
 
+    public void SetUpgrades(Dictionary<string, bool> upgrades)
+    {
+        this.upgrades = upgrades;
+    }
+
     public void LoadData(GameData data)
     {
         this.items = data.items;

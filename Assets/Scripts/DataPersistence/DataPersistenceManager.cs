@@ -40,6 +40,7 @@ public class DataPersistenceManager : MonoBehaviour
 
         // update item handler
         GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().SetItems(gameData.items);
+        GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().SetUpgrades(gameData.upgrades);
     }
 
     public void NewGame()
