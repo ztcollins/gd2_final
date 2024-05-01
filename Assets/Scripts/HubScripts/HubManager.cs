@@ -10,6 +10,7 @@ using UnityEngine.TextCore.Text;
 public class HubManager : MonoBehaviour
 {
     private float money;
+    private float tuition;
     private int day;
     private Dictionary<string, int> items;
     private Dictionary<string, bool> upgrades;
@@ -19,13 +20,16 @@ public class HubManager : MonoBehaviour
     #region References
         [SerializeField] Image newsButton;
         [SerializeField] Image shopButton;
+        [SerializeField] Image debtButton;
         [SerializeField] GameObject newsPanel;
         [SerializeField] GameObject shopPanel;
+        [SerializeField] GameObject debtPanel;
         [SerializeField] GameObject itemsContent;
         [SerializeField] GameObject upgradesContent;
         [SerializeField] TMP_FontAsset itemsFont;
         [SerializeField] TextMeshProUGUI newsTitle;
         [SerializeField] TextMeshProUGUI newsDescription;
+        [SerializeField] TextMeshProUGUI tuitionAmount;
     #endregion
 
     public void Awake()
@@ -36,6 +40,7 @@ public class HubManager : MonoBehaviour
     public void Refresh()
     {
         money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
+        tuition = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetTuition();
         day = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetDay();
         items = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetItems();
         upgrades = GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().GetUpgrades();
@@ -43,6 +48,7 @@ public class HubManager : MonoBehaviour
 
         eventCard = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetEventCard();
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().VisualizeCurrentValues();
+        tuitionAmount.text = "$" + tuition.ToString("F2");
         SetItems(items);
         SetUpgrades(upgrades);
     }
@@ -50,6 +56,7 @@ public class HubManager : MonoBehaviour
     public void NewsClicked()
     {
         newsPanel.SetActive(true);
+        debtPanel.SetActive(false);
         shopPanel.SetActive(false);
         UnselectButton();
         SelectButton(newsButton);
@@ -61,9 +68,19 @@ public class HubManager : MonoBehaviour
     public void ShopClicked()
     {
         shopPanel.SetActive(true);
+        debtPanel.SetActive(false);
         newsPanel.SetActive(false);
         UnselectButton();
         SelectButton(shopButton);
+    }
+
+    public void DebtClicked()
+    {
+        debtPanel.SetActive(true);
+        shopPanel.SetActive(false);
+        newsPanel.SetActive(false);
+        UnselectButton();
+        SelectButton(debtButton);
     }
 
     public void SelectButton(Image buttonToSelect)
@@ -94,6 +111,7 @@ public class HubManager : MonoBehaviour
     {
         shopPanel.SetActive(false);
         newsPanel.SetActive(false);
+        debtPanel.SetActive(false);
     }
 
     public void BuyItem(string itemUnparsed)
@@ -144,6 +162,34 @@ public class HubManager : MonoBehaviour
             Debug.Log("not enough money to buy " + upgradeToBuy + "!");
         }
 
+    }
+
+    public void PayTuition(float payment)
+    {
+        money = GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().GetMoney();
+
+        if(money >= payment)
+        {
+            // subtract money
+            money -= payment;
+            GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetMoney(money);
+
+            // subtract payment from tuition
+            tuition -= payment;
+            GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetTuition(tuition);
+            this.Refresh();
+
+            if(tuition <= 0)
+            {
+                // win game
+                Debug.Log("you win!");
+            }
+        }
+        else
+        {
+            // cant pay
+            Debug.Log("not enough money to pay " + payment + " for tuition!");
+        }
     }
 
     public void SetItems(Dictionary<string, int> items)

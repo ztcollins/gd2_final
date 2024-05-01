@@ -37,6 +37,7 @@ public class DataPersistenceManager : MonoBehaviour
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetCurrentXP(gameData.currentXP);
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetRequiredXP(gameData.requiredXP);
         GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetReputationLevel(gameData.reputationLevel);
+        GameObject.FindWithTag("StatsHandler").GetComponent<StatsHandler>().SetTuition(gameData.tuition);
 
         // update item handler
         GameObject.FindWithTag("ItemHandler").GetComponent<ItemHandler>().SetItems(gameData.items);

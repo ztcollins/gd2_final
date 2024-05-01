@@ -20,6 +20,7 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
     public EventCard eventCard;
     public int day;
     public float money;
+    public float tuition;
     public int reputationLevel;
     public int currentXP;
     public int requiredXP;
@@ -66,6 +67,16 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
     public float GetMoney()
     {
         return money;
+    }
+
+    public void SetTuition(float tuitionAmount)
+    {
+        this.tuition = tuitionAmount;
+    }
+
+    public float GetTuition()
+    {
+        return tuition;
     }
 
     public int GetReputationLevel()
@@ -138,6 +149,7 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         this.currentXP = data.currentXP;
         this.requiredXP = data.requiredXP;
         this.reputationLevel = data.reputationLevel;
+        this.tuition = data.tuition;
     }
 
     public void SaveData(ref GameData data)
@@ -147,6 +159,7 @@ public class StatsHandler : MonoBehaviour, IDataPersistence
         data.currentXP = currentXP;
         data.requiredXP = requiredXP;
         data.reputationLevel = reputationLevel;
+        data.tuition = tuition;
     }
 
     public void VisualizeCurrentValues()

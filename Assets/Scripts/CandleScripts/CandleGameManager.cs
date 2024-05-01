@@ -172,7 +172,7 @@ public class CandleGameManager : MonoBehaviour
         
         if(itemPlaced != "")
         {
-            GameObject.FindGameObjectWithTag("ItemHandler").GetComponent<ItemHandler>().DecreaseGeneric(itemPlaced);
+            //GameObject.FindGameObjectWithTag("ItemHandler").GetComponent<ItemHandler>().DecreaseGeneric(itemPlaced);
             Debug.Log("using " + itemPlaced);
             // item effects here (expand)
             if(itemPlaced == "cheap perfume")

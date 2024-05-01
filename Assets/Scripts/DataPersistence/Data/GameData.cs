@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameData
 {
     public float money;
+    public float tuition;
     public int day;
     public int reputationLevel;
     public int currentXP;
@@ -17,6 +18,7 @@ public class GameData
     public GameData()
     {
         this.money = 0;
+        this.tuition = 10000;
         this.day = 1;
         this.reputationLevel = 1;
         this.currentXP = 0;
