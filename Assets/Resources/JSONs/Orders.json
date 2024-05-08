@@ -36,7 +36,7 @@
             "bonusMult": 1.0,
             "difficulty": 1.0,
             "orderFrequency": 1.0,
-            "debugInfo": "debug day"
+            "debugInfo": "debug day 0"
         },
         {
             "dayNo": 1, 
@@ -73,7 +73,7 @@
             "bonusMult": 1.0,
             "difficulty": 1.0,
             "orderFrequency": 1.0,
-            "debugInfo": "day one"
+            "debugInfo": "day 1"
         },
         {
             "dayNo": 2, 
@@ -110,7 +110,7 @@
             "bonusMult": 1.0,
             "difficulty": 1.0,
             "orderFrequency": 1.0,
-            "debugInfo": "day two"
+            "debugInfo": "day 2"
         },
         {
             "dayNo": 3, 
@@ -147,7 +147,1006 @@
             "bonusMult": 1.0,
             "difficulty": 1.0,
             "orderFrequency": 1.0,
-            "debugInfo": "day three"
+            "debugInfo": "day 3"
+        },
+        {
+            "dayNo": 4, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 4"
+        },
+        {
+            "dayNo": 5, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 5"
+        },
+        {
+            "dayNo": 6, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 6"
+        },
+        {
+            "dayNo": 7, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 7"
+        },
+        {
+            "dayNo": 8, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 8"
+        },
+        {
+            "dayNo": 9, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 9"
+        },
+        {
+            "dayNo": 10, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 10"
+        },
+        {
+            "dayNo": 11, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 11"
+        },
+        {
+            "dayNo": 12, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 12"
+        },
+        {
+            "dayNo": 13, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 13"
+        },
+        {
+            "dayNo": 14, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 14"
+        },
+        {
+            "dayNo": 15, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 15"
+        },
+        {
+            "dayNo": 16, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 16"
+        },
+        {
+            "dayNo": 17, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 17"
+        },
+        {
+            "dayNo": 18, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 18"
+        },
+        {
+            "dayNo": 19, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 19"
+        },
+        {
+            "dayNo": 20, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 20"
+        },
+        {
+            "dayNo": 21, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 21"
+        },
+        {
+            "dayNo": 22, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 22"
+        },
+        {
+            "dayNo": 23, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 23"
+        },
+        {
+            "dayNo": 24, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 24"
+        },
+        {
+            "dayNo": 25, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 25"
+        },
+        {
+            "dayNo": 26, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 26"
+        },
+        {
+            "dayNo": 27, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 27"
+        },
+        {
+            "dayNo": 28, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 28"
+        },
+        {
+            "dayNo": 29, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 29"
+        },
+        {
+            "dayNo": 30, 
+            "type":
+                [
+                    {"imp": 0.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 0.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 1.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 30"
         }
     ]
 }

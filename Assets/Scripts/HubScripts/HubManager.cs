@@ -103,7 +103,7 @@ public class HubManager : MonoBehaviour
     {
         if(selectedButton)
         {
-            selectedButton.color = new Color32(89, 89, 93, 255);
+            selectedButton.color = new Color32(98, 98, 98, 255);
         }
     }
 

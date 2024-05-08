@@ -427,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -268.29, y: -461.9}
-  m_SizeDelta: {x: 375, y: 686.5}
+  m_AnchoredPosition: {x: -234.6, y: -546.7}
+  m_SizeDelta: {x: 375, y: 872.9}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &112827496
 MonoBehaviour:
@@ -443,15 +443,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.9411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6f64191b7ca615748a229fc39f5f569c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -882,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -59.9}
-  m_SizeDelta: {x: 356.7, y: 581.9}
+  m_AnchoredPosition: {x: 0, y: -153}
+  m_SizeDelta: {x: 366, y: 686.4}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &522533524
 MonoBehaviour:
@@ -1544,7 +1544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -42.5}
+  m_AnchoredPosition: {x: 0, y: -126.9}
   m_SizeDelta: {x: 375, y: 65.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643896300
@@ -1569,8 +1569,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ORDERS TODO:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8149db4c208d22f4c90f274359d70774, type: 2}
-  m_sharedMaterial: {fileID: -8079123946499705958, guid: 8149db4c208d22f4c90f274359d70774, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28db94989887a644ebe2bfdb630448f8, type: 2}
+  m_sharedMaterial: {fileID: -8079123946499705958, guid: 28db94989887a644ebe2bfdb630448f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
