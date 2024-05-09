@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TutorialHandler : MonoBehaviour
 {
-    Tutorial currentTutorial;
+    public Tutorial currentTutorial;
     public bool hasStep = false;
     public TutorialActionState action;
 
@@ -30,6 +30,7 @@ public class TutorialHandler : MonoBehaviour
     //public void StartTutorial(Tutorial tutorial) 
     public void StartTutorial()
     {
+        Debug.Log("TUTORIAL!!!");
         currentTutorial = new IntroTutorial();
     }
 
@@ -54,7 +55,9 @@ public class TutorialHandler : MonoBehaviour
                 hasStep = true;
                 break;
             case(TutorialActionState.COMPLETE):
+                gameObject.SetActive(false);
                 StopArrow();
+                HideDialogue();
                 overlayObj.SetActive(false);
                 hasStep = false;
                 currentTutorial = null;
@@ -65,6 +68,16 @@ public class TutorialHandler : MonoBehaviour
     private void DisplayDialogue()
     {
         dialogueHandler.SetDialogue(currentTutorial.GetText());
+    }
+
+    private void HideDialogue()
+    {
+        dialogueHandler.gameObject.SetActive(false);
+    }
+
+    private void ClearArrow()
+    {
+
     }
 
     private void DisplayArrow()
@@ -155,6 +168,8 @@ public class TutorialHandler : MonoBehaviour
         Vector2 worldCoord = objectRectTransform.TransformPoint(modifiedVector);
         Vector2 canvasCoord = pointer.rectTransform.InverseTransformPoint(worldCoord);
 
+
+        Debug.Log("POINT");
         pointer.SetPosition(canvasCoord);
         pointer.SetRotation(direction);
     }

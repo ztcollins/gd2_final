@@ -11,6 +11,7 @@ public class LobbyManager : MonoBehaviour
     public GameObject prefabOrder;
     public GameObject resultsPanel;
     private GameObject ordersObject;
+    
     private float money;
     private int day;
 
@@ -20,6 +21,7 @@ public class LobbyManager : MonoBehaviour
         OrderHandler orderHandler;
         SceneHandler sceneHandler;
         DataPersistenceManager dataHandler;
+        [SerializeField] Sprite openImage;
     #endregion
 
     void Start() 
@@ -142,7 +144,7 @@ public class LobbyManager : MonoBehaviour
     public void HandleCustomerClick(GameObject clickedCustomer)
     {
         Customer customer = clickedCustomer.GetComponent<Customer>();
-        clickedCustomer.GetComponent<SpriteRenderer>().color = Color.red;
+        clickedCustomer.GetComponent<SpriteRenderer>().sprite = openImage;
 
         if(customer.HasBeenClicked()) {
             // do nothing

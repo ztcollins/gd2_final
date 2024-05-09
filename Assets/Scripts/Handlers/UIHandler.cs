@@ -8,6 +8,8 @@ public class UIHandler : MonoBehaviour
 {
     Dictionary<GameObject, string[]> availabilityDictionary;
 
+    bool tutorial = false;
+
     #region References
         [SerializeField] private RectTransform rectTransform;
         [SerializeField] private BookHandler bookHandler;
@@ -19,6 +21,9 @@ public class UIHandler : MonoBehaviour
         [SerializeField] private TutorialHandler tutorialHandler;
         [SerializeField] private Pointer pointer;
         [SerializeField] private GameObject reputationBarObj;
+        [SerializeField] private Image black;
+        [SerializeField] private Animator animator;
+        [SerializeField] private SceneHandler sceneHandler;
     #endregion
 
     void Awake()
@@ -63,6 +68,30 @@ public class UIHandler : MonoBehaviour
     public void SummonBook()
     {
         bookHandler.SummonBook();
+    }
+
+    public void FadeToBlack()
+    {
+        Debug.Log("FADE TO BLACK");
+        animator.SetBool("SetFadeToBlack", true);
+    }
+
+    public void FadeFromBlack()
+    {
+        Debug.Log("FADE FREOM BLACK");
+        animator.SetBool("SetFadeToBlack", false);
+    }
+
+    public void LoadScene()
+    {
+        sceneHandler.SceneChange();
+        sceneHandler.ExecuteSceneChange();
+        if(tutorial) tutorialHandler.StartTutorial();
+    }
+
+    public void StartTutorial()
+    {
+        tutorial = true;
     }
 
     public void OnSceneChange(string currentScene)

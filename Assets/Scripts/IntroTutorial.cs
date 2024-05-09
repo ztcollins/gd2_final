@@ -15,9 +15,13 @@ public class IntroTutorial : Tutorial
 
     protected override void AddSteps()
     {
-        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "TEST!"));
-        steps.Add(new TutorialEvent(TutorialActionState.ONKEY, KeyCode.N, "TEST KEY"));
-        steps.Add(new TutorialEvent(TutorialActionState.ONKEY, KeyCode.W, "XPBAR", "DOES THE ANIMATION WORK?"));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "Welcome to Demonology!"));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "In this game, you are an amateur demon summoner tasked with paying off their debts!"));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "You need to accumulate ten thousand dollars before 30 days have passed"));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK,  "DebtButton", "Once you make money through summoning demons, you can pay off your debt by clicking the debt button"));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "As you summon demons, your reputation will increase, which will garner you more money per demon summoned."));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "You can buy items here to enhance your summons and upgrade your character"));
+        steps.Add(new TutorialEvent(TutorialActionState.ONCLICK, "And if you need help, press the arrow button at the bottom of the screen to pull up the Necronomicon, which has details about the kinds of demons!"));
         steps.Add(new TutorialEvent(TutorialActionState.COMPLETE));
     }
 

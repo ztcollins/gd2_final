@@ -14,6 +14,7 @@ public class DialogueHandler : MonoBehaviour
 
     public void SetDialogue(string dialogue)
     {
+        gameObject.SetActive(true);
         dialogueBox.text = dialogue;
     }
 

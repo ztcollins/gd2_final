@@ -28,6 +28,8 @@ TagManager:
   - ItemHolder
   - XPBAR
   - itemDrag
+  - DebtButton
+  - ShopButton
   layers:
   - Default
   - TransparentFX

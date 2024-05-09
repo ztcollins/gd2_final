@@ -42,6 +42,15 @@ public class TutorialEvent : MonoBehaviour
         text = "TODO";
     }
 
+    public TutorialEvent(TutorialActionState action, string objectTag, string text)
+    {
+        Debug.Log("THIS ONE");
+        this.action = action;
+        this.objectTag = objectTag;
+        this.text = text;
+
+    }
+
     public TutorialEvent(TutorialActionState action, KeyCode key, string objectTag, string text)
     {
         this.action = action;

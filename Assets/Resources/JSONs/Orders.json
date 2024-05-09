@@ -43,6 +43,265 @@
             "type":
                 [
                     {"imp": 1.0},
+                    {"worm": 0.0},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 0.0}
+                ],
+            "color":
+                [
+                    {"blue": 2.0},
+                    {"green": 1.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 0.0}
+                ],
+            "size":
+                [
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 1"
+        },
+        {
+            "dayNo": 2, 
+            "type":
+                [
+                    {"imp": 1.0},
+                    {"worm": 0.25},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 0.0}
+                ],
+            "color":
+                [
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 0.0}
+                ],
+            "size":
+                [
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 2"
+        },
+        {
+            "dayNo": 3, 
+            "type":
+                [
+                    {"imp": 1.0},
+                    {"worm": 0.5},
+                    {"golem": 0.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 0.0}
+                ],
+            "color":
+                [
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 0.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 0.0}
+                ],
+            "size":
+                [
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 3"
+        },
+        {
+            "dayNo": 4, 
+            "type":
+                [
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 0.0}
+                ],
+            "color":
+                [
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 0.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 0.0},
+                    {"medium": 0.0},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 4"
+        },
+        {
+            "dayNo": 5, 
+            "type":
+                [
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.25},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 2.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 0.0}
+                ],
+            "size":
+                [
+                    {"tiny": 1.0},
+                    {"small": 0.5},
+                    {"medium": 1.0},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 5"
+        },
+        {
+            "dayNo": 6, 
+            "type":
+                [
+                    {"imp": 0.5},
+                    {"worm": 0.5},
+                    {"golem": 1.0},
+                    {"humanoid": 0.0},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 0.0}
+                ],
+            "color":
+                [
+                    {"blue": 0.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 0.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 0.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 1.0},
+                    {"medium": 0.5},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 6"
+        },
+        {
+            "dayNo": 7, 
+            "type":
+                [
+                    {"imp": 0.5},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 0.5},
+                    {"chimera": 0.0},
+                    {"serpent": 0.0},
+                    {"curse": 1.0}
+                ],
+            "color":
+                [
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 2.0},
+                    {"brown": 1.0},
+                    {"purple": 0.0},
+                    {"orange": 0.0},
+                    {"white": 0.0},
+                    {"red": 0.0},
+                    {"black": 1.0}
+                ],
+            "size":
+                [
+                    {"tiny": 0.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 0.0},
+                    {"huge": 0.0}
+                ],
+            "bonusMult": 1.0,
+            "difficulty": 1.0,
+            "orderFrequency": 1.0,
+            "debugInfo": "day 7"
+        },
+        {
+            "dayNo": 8, 
+            "type":
+                [
+                    {"imp": 1.0},
                     {"worm": 1.0},
                     {"golem": 1.0},
                     {"humanoid": 1.0},
@@ -73,13 +332,13 @@
             "bonusMult": 1.0,
             "difficulty": 1.0,
             "orderFrequency": 1.0,
-            "debugInfo": "day 1"
+            "debugInfo": "day 8"
         },
         {
-            "dayNo": 2, 
+            "dayNo": 9, 
             "type":
                 [
-                    {"imp": 100.0},
+                    {"imp": 1.0},
                     {"worm": 1.0},
                     {"golem": 1.0},
                     {"humanoid": 1.0},
@@ -89,7 +348,7 @@
                 ],
             "color":
                 [
-                    {"blue": 100.0},
+                    {"blue": 1.0},
                     {"green": 1.0},
                     {"yellow": 1.0},
                     {"brown": 1.0},
@@ -101,269 +360,10 @@
                 ],
             "size":
                 [
-                    {"tiny": 100.0},
+                    {"tiny": 1.0},
                     {"small": 1.0},
                     {"medium": 1.0},
                     {"large": 1.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 2"
-        },
-        {
-            "dayNo": 3, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 3"
-        },
-        {
-            "dayNo": 4, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 4"
-        },
-        {
-            "dayNo": 5, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 5"
-        },
-        {
-            "dayNo": 6, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 6"
-        },
-        {
-            "dayNo": 7, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 7"
-        },
-        {
-            "dayNo": 8, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
-            "bonusMult": 1.0,
-            "difficulty": 1.0,
-            "orderFrequency": 1.0,
-            "debugInfo": "day 8"
-        },
-        {
-            "dayNo": 9, 
-            "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
-            "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
-            "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -375,32 +375,32 @@
             "dayNo": 10, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -412,32 +412,32 @@
             "dayNo": 11, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -449,32 +449,32 @@
             "dayNo": 12, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -486,32 +486,32 @@
             "dayNo": 13, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -523,32 +523,32 @@
             "dayNo": 14, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -560,32 +560,32 @@
             "dayNo": 15, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -596,35 +596,35 @@
         {
             "dayNo": 16, 
             "type":
-                [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
-                    {"curse": 1.0}
-                ],
+            [
+                {"imp": 1.0},
+                {"worm": 1.0},
+                {"golem": 1.0},
+                {"humanoid": 1.0},
+                {"chimera": 1.0},
+                {"serpent": 1.0},
+                {"curse": 1.0}
+            ],
             "color":
-                [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
-                    {"black": 1.0}
-                ],
+            [
+                {"blue": 1.0},
+                {"green": 1.0},
+                {"yellow": 1.0},
+                {"brown": 1.0},
+                {"purple": 1.0},
+                {"orange": 1.0},
+                {"white": 1.0},
+                {"red": 1.0},
+                {"black": 1.0}
+            ],
             "size":
-                [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
-                    {"huge": 1.0}
-                ],
+            [
+                {"tiny": 1.0},
+                {"small": 1.0},
+                {"medium": 1.0},
+                {"large": 1.0},
+                {"huge": 1.0}
+            ],
             "bonusMult": 1.0,
             "difficulty": 1.0,
             "orderFrequency": 1.0,
@@ -634,32 +634,32 @@
             "dayNo": 17, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -671,32 +671,32 @@
             "dayNo": 18, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -708,32 +708,32 @@
             "dayNo": 19, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -745,32 +745,32 @@
             "dayNo": 20, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -782,32 +782,32 @@
             "dayNo": 21, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -819,32 +819,32 @@
             "dayNo": 22, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -856,32 +856,32 @@
             "dayNo": 23, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -893,32 +893,32 @@
             "dayNo": 24, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -930,32 +930,32 @@
             "dayNo": 25, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -967,32 +967,32 @@
             "dayNo": 26, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -1004,32 +1004,32 @@
             "dayNo": 27, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -1041,32 +1041,32 @@
             "dayNo": 28, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -1078,32 +1078,32 @@
             "dayNo": 29, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,
@@ -1115,32 +1115,32 @@
             "dayNo": 30, 
             "type":
                 [
-                    {"imp": 0.0},
-                    {"worm": 0.0},
-                    {"golem": 0.0},
-                    {"humanoid": 0.0},
-                    {"chimera": 0.0},
-                    {"serpent": 0.0},
+                    {"imp": 1.0},
+                    {"worm": 1.0},
+                    {"golem": 1.0},
+                    {"humanoid": 1.0},
+                    {"chimera": 1.0},
+                    {"serpent": 1.0},
                     {"curse": 1.0}
                 ],
             "color":
                 [
-                    {"blue": 0.0},
-                    {"green": 0.0},
-                    {"yellow": 0.0},
-                    {"brown": 0.0},
-                    {"purple": 0.0},
-                    {"orange": 0.0},
-                    {"white": 0.0},
-                    {"red": 0.0},
+                    {"blue": 1.0},
+                    {"green": 1.0},
+                    {"yellow": 1.0},
+                    {"brown": 1.0},
+                    {"purple": 1.0},
+                    {"orange": 1.0},
+                    {"white": 1.0},
+                    {"red": 1.0},
                     {"black": 1.0}
                 ],
             "size":
                 [
-                    {"tiny": 0.0},
-                    {"small": 0.0},
-                    {"medium": 0.0},
-                    {"large": 0.0},
+                    {"tiny": 1.0},
+                    {"small": 1.0},
+                    {"medium": 1.0},
+                    {"large": 1.0},
                     {"huge": 1.0}
                 ],
             "bonusMult": 1.0,

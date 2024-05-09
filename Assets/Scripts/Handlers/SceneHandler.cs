@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneHandler : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class SceneHandler : MonoBehaviour
     #endregion
     void Awake()
     {
-        ChangeScene(startScene);
+        StartScene(startScene);
     }
    
     public void UseInstruction(SceneHandlerInstruction instruction, string instructionText)
@@ -37,8 +38,7 @@ public class SceneHandler : MonoBehaviour
                 break;
             case(SceneHandlerInstruction.NEWGAME):
                 GameObject.FindWithTag("DataHandler").GetComponent<DataPersistenceManager>().CreateNewSave();
-                ChangeScene("Hub"); //change to intro animation or something eventually?
-                tutorialHandler.StartTutorial();
+                StartGame("Hub"); //change to intro animation or something eventually?
                 break;
             case(SceneHandlerInstruction.FINISHORDER):
                 GameObject.FindWithTag("OrderHandler").GetComponent<OrderHandler>().SetOrderComplete(true);
@@ -50,6 +50,12 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
+    void StartScene(string sceneName)
+    {
+        currentScene = sceneName;
+        ExecuteSceneChange();
+    }
+
     void ChangeScene(string sceneName)
     {
         if(sceneName == null) 
@@ -57,10 +63,29 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("sceneName is null!");
             return;
         }
-        
-        SceneManager.LoadScene(sceneName);
         currentScene = sceneName;
-        //BroadcastMessage("OnSceneChange", currentScene); MAY WANT TO EXPAND TO THIS, HAS SOME PROBLEMS RIGHT NOW THO
+        UIHandler.FadeToBlack();
+    }
+
+    void StartGame(string sceneName)
+    {
+        Debug.Log("swaf");
+        if(sceneName == null)
+        {
+            return;
+        }
+        currentScene = sceneName;
+        UIHandler.StartTutorial();
+        UIHandler.FadeToBlack();
+    }
+
+    public void ExecuteSceneChange()
+    {
+        SceneManager.LoadScene(currentScene);
+    }
+
+    public void SceneChange()
+    {
         UIHandler.OnSceneChange(currentScene);
     }
 
